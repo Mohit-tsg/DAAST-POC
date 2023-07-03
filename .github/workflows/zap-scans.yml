@@ -7,23 +7,19 @@ on:
   pull_request:
 
 jobs:
-  security_scan:
+  zap_scan:
     runs-on: ubuntu-latest
-
+    name: Scan the webapplication
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
         with:
-          node-version: 14
+          ref: master
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run OWASP ZAP API scan
-        env:
-          ZAP_API_KEY: ${{ secrets.ZAP_API_KEY }} # Set your ZAP API key as a secret in your repository
-          ZAP_API_URL: http://localhost:3001 # Update with your ZAP API URL
-        run: npm run owasp-zap-scan # Replace with the script to run the ZAP API scan
+      - name: ZAP Scan
+        uses: zaproxy/action-api-scan@v0.3.0
+        with:
+          token: ${{ secrets.GIT_TOKEN }}
+          docker_name: 'owasp/zap2docker-stable'
+          format: openapi
+          target: 'https://localhost/3001'

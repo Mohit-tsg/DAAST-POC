@@ -15,10 +15,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # Adjust the Node.js version as needed
+
+      - name: Install zap-cli
+        run: npm install -g zap-cli
+
       - name: Run ZAP API Scan
         env:
           ZAP_API_KEY: ${{ secrets.ZAP_API_KEY }}  # Set the ZAP API key as a secret in your repository settings
         run: |
-          docker pull owasp/zap2docker-stable
-          docker run -v $PWD:/zap/wrk/:rw -t owasp/zap2docker-stable zap-api-scan.py -t http://localhost.3001 -f openapi -J report.json -z "-config api.key=${ZAP_API_KEY}"
-          cat report.json
+          zap-cli start -d
+          zap-cli open-url http://example.com
+          zap-cli active-scan -r -S -J report.json -z "apiKey=${ZAP_API_KEY}"
+          zap-cli alerts
+          zap-cli report -o report.html
+          zap-cli shutdown

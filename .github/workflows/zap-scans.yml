@@ -7,16 +7,19 @@ on:
   pull_request:
 
 jobs:
-  zap_scan:
+  check-run:
     runs-on: ubuntu-latest
-    name: Scan the webapplication
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          ref: master
 
-      - name: ZAP Scan
-        uses: zaproxy/action-api-scan@v0.3.0
-        with:
-          target: 'https://localhost:3001'
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - run: sudo apt-get update && sudo apt-get install -y nginx && sudo systemctl start nginx
+
+    - name: ZAP Scan
+      uses: zaproxy/action-api-scan@v0.3.0
+      with:
+        target: 'https://localhost:3001'
+   
+
+

@@ -1,22 +1,22 @@
-name: OWASP ZAP API Scan
+name: OWASP ZAP Scan
 
 on:
   push:
     branches:
-      - main
-  pull_request:
+      - main  # Adjust the branch name as needed
 
 jobs:
   zap_scan:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
 
-      - name: ZAP Scan
-        uses: zaproxy/action-api-scan@v0.3.0
-        with:
-          token: ${{ secrets.GIT_TOKEN }}
-          docker_name: 'owasp/zap2docker-stable'
-          format: openapi
-          target: 'https://localhost/3001'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run ZAP API Scan
+        env:
+          ZAP_API_KEY: ${{ secrets.ZAP_API_KEY }}  # Set the ZAP API key as a secret in your repository settings
+        run: |
+          docker pull owasp/zap2docker-stable
+          docker run -v $PWD:/zap/wrk/:rw -t owasp/zap2docker-stable zap-api-scan.py -t http://localhost.3001 -f openapi -J report.json -z "-config api.key=${ZAP_API_KEY}"
+          cat report.json

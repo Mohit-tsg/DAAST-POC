@@ -21,4 +21,3 @@ jobs:
       id: action-full-scan
       with:
         target: 'http://localhost:3001'
-        allow_issue_writing: false

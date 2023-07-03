@@ -20,4 +20,4 @@ jobs:
         with:
           target: 'http://e727-14-140-115-103.ngrok-free.app'
           rules_file_name: '.zap/rules.tsv'
-        permissions: 'write-all'
+          permissions: 'write-all'

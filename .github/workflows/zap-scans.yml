@@ -20,4 +20,4 @@ jobs:
         with:
           token: ${{ secrets.GIT_TOKEN }}
           target: 'http://e727-14-140-115-103.ngrok-free.app'
-          permissions: 'write-all'
+          # permissions: 'write-all'

@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main  # Adjust the branch name as needed
+  pull_request:
+    
 
 jobs:
   zap_scan:

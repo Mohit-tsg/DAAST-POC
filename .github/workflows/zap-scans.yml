@@ -19,6 +19,6 @@ jobs:
         uses: zaproxy/action-api-scan@v0.3.0
         with:
           
-          target: 'http://localhost'
+          target: 'http://localhost:3001/cms'
           rules_file_name: '.zap/rules.tsv'
           cmd_options: '-a'

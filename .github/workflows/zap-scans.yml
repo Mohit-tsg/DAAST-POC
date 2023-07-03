@@ -1,4 +1,4 @@
-name: Check run
+name: OWASP ZAP API Scan
 
 on:
   push:
@@ -6,24 +6,24 @@ on:
       - main
   pull_request:
 
-
 jobs:
-  zap_scan:
+  security_scan:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - run: sudo apt-get update && sudo apt-get install -y nginx && sudo systemctl start nginx
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
 
-    - name: ZAP Scan
-      uses: ./
-      id: action-api-scan
-      with:
-        target: 'http://localhost'
-        allow_issue_writing: false
-         
-   
+      - name: Install dependencies
+        run: npm install
 
-
+      - name: Run OWASP ZAP API scan
+        env:
+          ZAP_API_KEY: ${{ secrets.ZAP_API_KEY }} # Set your ZAP API key as a secret in your repository
+          ZAP_API_URL: http://localhost:3001 # Update with your ZAP API URL
+        run: npm run owasp-zap-scan # Replace with the script to run the ZAP API scan

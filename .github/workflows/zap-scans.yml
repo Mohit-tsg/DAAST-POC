@@ -1,24 +1,24 @@
-name: ZAP Scan
+name: Check run
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
-   
 
 jobs:
-  zap_scan:
+  check-run:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/[email protected]
+    - name: Checkout
+      uses: actions/checkout@v3
 
-    - name: Install dependencies
-      run: npm install
+    - run: sudo apt-get update && sudo apt-get install -y nginx && sudo systemctl start nginx
 
-    - name: Run ZAP scan
-      run: node zap_scan.js
-
-    - name: Check for ZAP alerts
-      run: |
-        npm install -g zap-cli
-        zap-cli --zap-url http://localhost:8080 --api-key your-api-key alerts -l High,Medium --fail-build
+    - name: ZAP Scan
+      uses: ./
+      id: action-full-scan
+      with:
+        target: 'http://localhost:3001'
+        allow_issue_writing: false

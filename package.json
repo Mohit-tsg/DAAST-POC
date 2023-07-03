@@ -66,7 +66,9 @@
     "typeorm": "^0.3.13",
     "typeorm-naming-strategies": "^4.1.0",
     "uuid": "^8.3.2",
-    "winston": "^3.3.3"
+    "winston": "^3.3.3",
+    "zaproxy": "1.0.1"
+
   },
   "devDependencies": {
     "@commitlint/cli": "^17.5.1",

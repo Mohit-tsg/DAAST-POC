@@ -20,5 +20,5 @@ jobs:
         with:
           
           target: 'http://localhost:3001/cms'
-          rules_file_name: '.zap/rules.tsv'
+          rules_file_name: '.github/zap/rules.tsv'
           cmd_options: '-a'

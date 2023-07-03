@@ -7,19 +7,19 @@ on:
   pull_request:
 
 jobs:
-  check-run:
+  scan:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-
-    - run: sudo apt-get update && sudo apt-get install -y nginx && sudo systemctl start nginx
-
-    - name: ZAP Scan
-      uses: zaproxy/action-api-scan@v0.3.0
+    - uses: actions/checkout@v2
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
       with:
-        target: 'https://localhost:3001'
-   
+        node-version: '14.x'
+    - name: Install Dependencies
+      run: npm install
+    - name: Scan for Security Issues
+      uses: zaproxy/action-api-scan@v1
+      with:
+        target: 'http://localhost:3001'
 
 

@@ -19,7 +19,7 @@ jobs:
         uses: actions/setup-node@v2
         
       - name: Install zap-cli
-        run: npm install -g zap-cli
+        run: npm install zap-cli
 
       - name: Run ZAP API Scan
         env:

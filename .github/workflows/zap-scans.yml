@@ -18,5 +18,6 @@ jobs:
       - name: ZAP Scan
         uses: zaproxy/action-api-scan@v0.3.0
         with:
+          token: ${{ secrets.GIT_TOKEN }}
           target: 'http://e727-14-140-115-103.ngrok-free.app'
           permissions: 'write-all'

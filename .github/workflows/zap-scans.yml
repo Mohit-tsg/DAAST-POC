@@ -10,24 +10,15 @@ on:
 jobs:
   zap_scan:
     runs-on: ubuntu-latest
-
+   
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Install Node.js
-        uses: actions/setup-node@v2
-        
-      - name: Install zap-cli
-        run: npm install zap-cli
-
-      - name: Run ZAP API Scan
-        env:
-          ZAP_API_KEY: ${{ secrets.ZAP_API_KEY }}  # Set the ZAP API key as a secret in your repository settings
-        run: |
-          zap-cli start -d
-          zap-cli open-url http://example.com
-          zap-cli active-scan -r -S -J report.json -z "apiKey=${ZAP_API_KEY}"
-          zap-cli alerts
-          zap-cli report -o report.html
-          zap-cli shutdown
+      - name: ZAP Scan
+        uses: zaproxy/action-api-scan@v0.3.0
+        with:
+          
+          target: 'https://www.zaproxy.org/'
+          rules_file_name: '.zap/rules.tsv'
+          cmd_options: '-a'

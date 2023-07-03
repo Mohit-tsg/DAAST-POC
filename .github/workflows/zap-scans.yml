@@ -18,7 +18,7 @@ jobs:
     - name: Install Dependencies
       run: npm install
     - name: Scan for Security Issues
-      uses: zaproxy/action-api-scan@v1
+      uses: zaproxy/action-api-scan@v0.3.0
       with:
         target: 'http://localhost:3001'
 

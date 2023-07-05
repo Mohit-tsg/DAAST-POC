@@ -7,17 +7,32 @@ on:
   pull_request:
     
 
-jobs:
-  zap_scan:
-    runs-on: ubuntu-latest
+# jobs:
+#   zap_scan:
+#     runs-on: ubuntu-latest
    
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
+
+#       - name: ZAP Scan
+#         uses: zaproxy/action-api-scan@v0.3.0
+#         with:
+#           token: ${{ secrets.GIT_TOKEN }}
+#           target: 'https://44f0-14-140-115-103.ngrok-free.app/cms'
+#           # permissions: 'write-all'
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: ZAP Scan
-        uses: zaproxy/action-api-scan@v0.3.0
-        with:
-          token: ${{ secrets.GIT_TOKEN }}
-          target: 'http://e727-14-140-115-103.ngrok-free.app'
-          # permissions: 'write-all'
+      - name: Install dependencies
+        run: npm install
+
+      - name: API Scan
+        run: |
+          npm install -g zaproxy
+          zap-api-scan --targetUrl https://da3c-14-140-115-103.ngrok-free.app/docs/ --output /path/to/report.html

@@ -26,4 +26,5 @@ jobs:
           docker pull owasp/zap2docker-weekly
           docker run -t owasp/zap2docker-weekly zap-api-scan.py \
             -t https://da3c-14-140-115-103.ngrok-free.app/docs/#/cms.yaml \
-            -f openapi
+            -f openapi \
+            -c api-scan.conf

@@ -28,4 +28,3 @@ jobs:
             -t http://localhost:3001/docs/# \
             -f openapi \
             -c api-scan.conf \
-            -J api-scan-report.json

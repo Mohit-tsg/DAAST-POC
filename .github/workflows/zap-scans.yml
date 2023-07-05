@@ -14,14 +14,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      # - name: ZAP Scan
-      #   uses: zaproxy/action-api-scan@v0.3.0
-      #   with:
-      #     token: ${{ secrets.GIT_TOKEN }}
-      #     target: 'https://44f0-14-140-115-103.ngrok-free.app/docs'
-      #     permissions: 'write-all'
+      - name: ZAP Scan
+        uses: zaproxy/action-api-scan@v0.3.0
+        with:
+          token: ${{ secrets.GIT_TOKEN }}
+          target: 'https://44f0-14-140-115-103.ngrok-free.app/docs'
+          permissions: 'write-all'
+      - run: npm run test
+        
 
-      - name: Run OWASP ZAP scan
-        run: |
-            npm install 
-            npm run test
+     

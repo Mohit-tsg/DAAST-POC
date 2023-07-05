@@ -20,11 +20,8 @@ jobs:
       #     token: ${{ secrets.GIT_TOKEN }}
       #     target: 'https://44f0-14-140-115-103.ngrok-free.app/docs'
       #     permissions: 'write-all'
+      - name: ZAP Scan
+        uses: zaproxy/action-full-scan@v0.5.0
 
       - name: Run OWASP ZAP scan
-        run: |
-          docker pull owasp/zap2docker-weekly
-          docker run -t owasp/zap2docker-weekly zap-api-scan.py \
-            -t http://localhost:3001/docs/# \
-            -f openapi \
-            -c api-scan.conf \
+        run: npm run test

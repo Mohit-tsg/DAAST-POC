@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt";
 import * as jwt from "jsonwebtoken";
 import createError from "http-errors";
-import { CmsUser } from "@database/model/cms-user.model";
+import { CmsUser } from "../database/model/cms-user.model";
 import constant from "@config/constant";
 import { LoggedInUser } from "@type/user";
 import { JWT_SECRET, TIMEZONE } from "@config/secret";

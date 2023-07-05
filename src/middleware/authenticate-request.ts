@@ -16,6 +16,7 @@ declare module "express" {
   }
 }
 
+
 export class AuthenticateRequest {
   /**
    * Global middleware to check request is autneticated of not

@@ -22,4 +22,6 @@ jobs:
       #     permissions: 'write-all'
 
       - name: Run OWASP ZAP scan
-        run: npm install|npm run test
+        run: |
+            npm install 
+            npm run test

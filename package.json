@@ -33,8 +33,7 @@
     "migrate": "typeorm migration:run",
     "migrate:run": "node_modules/.bin/typeorm migration:run",
     "prettier": "prettier --config --ignore-path .gitignore .prettierrc './**.ts' --check",
-    "prettier:fix": "prettier --config --ignore-path .gitignore .prettierrc './**.ts' --write",
-    "zap-scan": "zap-cli --zap-url https://bc33-103-211-15-147.ngrok-free.app/:3001/ --api-key lmtl61itcg9k241vc50kpffk8v --spider --scan"
+    "prettier:fix": "prettier --config --ignore-path .gitignore .prettierrc './**.ts' --write"
     
   },
   "dependencies": {

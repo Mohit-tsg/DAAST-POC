@@ -11,30 +11,14 @@ jobs:
     runs-on: ubuntu-latest
    
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: ZAP Scan
+        uses: zaproxy/action-api-scan@v0.3.0
         with:
-          node-version: 14
+          token: ${{ secrets.GIT_TOKEN }}
+          target: 'https://6df8-103-211-15-147.ngrok-free.app/docs'
+          permissions: 'write-all'
 
-      - name: Install dependencies
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm install
-
-      - name: Build application
-        run: npm run build
-
-      - name: Start application
-        run: npm run start
-
-      - name: Run OWASP ZAP scan
-        run: npm run zap-scan
-
-      - name: Upload ZAP scan report
-        uses: actions/upload-artifact@v2
-        with:
-          name: zap-scan-report
-          path: ./zap-report.html
+    

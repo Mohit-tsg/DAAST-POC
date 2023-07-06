@@ -3,7 +3,7 @@ import i18n from "i18n";
 import { ResponseParser } from "@util/response-parser";
 import constant from "@config/constant";
 import { CmsService } from "@service/cms.service";
-import { traceDecorator } from "@studiographene/nodejs-telemetry";
+// import { traceDecorator } from "@studiographene/nodejs-telemetry";
 
 export class CmsController {
   private responseParser: ResponseParser;
@@ -19,7 +19,7 @@ export class CmsController {
    * @param  {Response} res
    * @returns void
    */
-  @traceDecorator
+  // @traceDecorator
   public login = async (req: Request, res: Response): Promise<void> => {
     const {
       body: { email, password },
@@ -38,7 +38,7 @@ export class CmsController {
    * @param  {Response} res
    * @returns void
    */
-  @traceDecorator
+  // @traceDecorator
   public create = async (req: Request, res: Response): Promise<void> => {
     const {
       body: { email, password },

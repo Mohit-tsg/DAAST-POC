@@ -1,19 +1,21 @@
-import { logger } from "@studiographene/nodejs-telemetry";
+// import { logger } from "@studiographene/nodejs-telemetry";
 
 const handleRejectedPromise = (
   reason: Record<string, unknown>,
   promise: Promise<unknown>
 ): void => {
-  logger.error(
-    "Unexpected promise rejection occured.",
-    "handleRejectedPromise",
-    {
-      data: {
-        reason,
-        ex: promise,
-      },
-    }
-  );
+  // eslint-disable-next-line no-console
+  console.log(reason,promise);
+  // logger.error(
+  //   "Unexpected promise rejection occured.",
+  //   "handleRejectedPromise",
+  //   {
+  //     data: {
+  //       reason,
+  //       ex: promise,
+  //     },
+  //   }
+  // );
 
   process.exit(1);
 };

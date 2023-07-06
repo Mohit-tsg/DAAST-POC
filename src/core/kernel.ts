@@ -11,9 +11,8 @@ import SwaggerDocument from "@util/swagger-document";
 import { ENVIRONMENT, SENTRY_DSN } from "@config/secret";
 import constant from "@config/constant";
 import path from "path";
-import { requestCtx } from "@middleware/request-ctx-middleware";
 import { dbConnection } from "@database/db-connection";
-import { logger } from "@studiographene/nodejs-telemetry";
+// import { logger } from "@studiographene/nodejs-telemetry";
 
 export class Kernel {
   private requestId: RequestIDMiddleware = new RequestIDMiddleware();
@@ -27,9 +26,7 @@ export class Kernel {
     app.use(this.requestId.assign);
   }
 
-  public attachRequestContext(app: Application): void {
-    app.use(requestCtx);
-  }
+
 
   public errorMiddleware(app: Application): void {
     app.use(errorMiddleware);
@@ -40,19 +37,21 @@ export class Kernel {
     return dbConnection
       .initialize()
       .then(() => {
-        logger.info(
-          "Data Source has been initialized!",
-          "Kernel.databaseConnection"
-        );
+        // logger.info(
+        //   "Data Source has been initialized!",
+        //   "Kernel.databaseConnection"
+        // );
       })
       .catch((err: Error) => {
-        logger.error(
-          "Error during Data Source initialization:",
-          "Kernel.databaseConnection",
-          {
-            data: { err },
-          }
-        );
+        // eslint-disable-next-line no-console
+        console.log(err);
+        // logger.error(
+        //   "Error during Data Source initialization:",
+        //   "Kernel.databaseConnection",
+        //   {
+        //     data: { err },
+        //   }
+        // );
       });
   }
 

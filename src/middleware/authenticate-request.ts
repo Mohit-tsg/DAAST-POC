@@ -4,10 +4,9 @@ import { Request, Response, NextFunction } from "express";
 import i18n from "i18n";
 import * as jwt from "jsonwebtoken";
 import createError from "http-errors";
-import ZapClient from 'zaproxy';
 import { ResponseParser } from "@util/response-parser";
 import constant from "@config/constant";
-import { logger } from "@studiographene/nodejs-telemetry";
+// import { logger } from "@studiographene/nodejs-telemetry";
 import { JWT_SECRET } from "@config/secret";
 
 declare module "express" {
@@ -42,16 +41,16 @@ export class AuthenticateRequest {
     }
 
     const decodedToken = jwt.verify(token, JWT_SECRET);
-    logger.debug("decoded-token", "AuthenticateRequest.validate", {
-      decodedToken,
-    });
+    // logger.debug("decoded-token", "AuthenticateRequest.validate", {
+    //   decodedToken,
+    // });
     if (!decodedToken) {
       throw new createError.Unauthorized(i18n.__("invalidToken"));
     }
     req.user = JSON.parse(JSON.stringify(decodedToken));
 
     // passing usr context to logger
-    logger.userContext({ id: req.user.id });
+    // logger.userContext({ id: req.user.id });
     next();
   }
 }

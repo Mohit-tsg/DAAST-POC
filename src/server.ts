@@ -1,8 +1,8 @@
-import { adotInit, logger } from "@studiographene/nodejs-telemetry";
-import { APP_NAME, APP_VERSION } from "./config/secret";
+// import { adotInit, logger } from "@studiographene/nodejs-telemetry";
+// import { APP_NAME, APP_VERSION } from "./config/secret";
 
-const serviceNode = `${APP_NAME}@${APP_VERSION}`;
-adotInit(serviceNode, "/");
+// const serviceNode = `${APP_NAME}@${APP_VERSION}`;
+// adotInit(serviceNode, "/");
 
 /* eslint-disable */
 // import { logger } from "@studiographene/nodejs-telemetry";
@@ -39,13 +39,13 @@ app.set("port", port);
  * Start Express server.
  */
 const server = app.listen(app.get("port"), () => {
-  logger.info(
-    `App is running at http://localhost:${app.get("port")} in ${app.get(
-      "env"
-    )} mode`,
-    "server.ts"
-  );
-  logger.info("Press CTRL-C to stop", "server.ts");
+  // logger.info(
+  //   `App is running at http://localhost:${app.get("port")} in ${app.get(
+  //     "env"
+  //   )} mode`,
+  //   "server.ts"
+  // );
+  // logger.info("Press CTRL-C to stop", "server.ts");
 });
 
 export default server;

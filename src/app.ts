@@ -22,7 +22,6 @@ class App {
     this.kernel.initSentry(this.app);
     this.kernel.initBodyParser(this.app);
     this.kernel.addCommonMiddleware(this.app);
-    this.kernel.attachRequestContext(this.app);
     await this.kernel.databaseConnection();
     this.kernel.initTranslation(this.app);
     this.kernel.setupSwagger(this.app);

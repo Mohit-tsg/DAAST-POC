@@ -3,7 +3,8 @@ name: DAST Scan
 on:
   push:
     branches:
-      - main
+      - main'
+  pull_request:
 
 jobs:
   dast_scan:

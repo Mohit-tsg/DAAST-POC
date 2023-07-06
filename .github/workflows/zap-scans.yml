@@ -1,23 +1,38 @@
-name: OWASP ZAP Scan
+name: DAST Scan
 
 on:
   push:
     branches:
-      - main  # Adjust the branch name as needed
-  pull_request:
-    
+      - main
 
 jobs:
-  zap_scan:
+  dast_scan:
     runs-on: ubuntu-latest
-   
+
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: ZAP Scan
-        uses: zaproxy/action-api-scan@v0.3.0
+      - name: Install Node.js
+        uses: actions/setup-node@v2
         with:
-          token: ${{ secrets.GIT_TOKEN }}
-          target: 'https://6df8-103-211-15-147.ngrok-free.app/docs'
-          # permissions: 'write-all'
+          node-version: '14'
+
+      - name: Install project dependencies
+        run: npm ci
+
+      - name: Start API server
+        run: npm run start:dev & sleep 5
+
+      - name: Run DAST Scan
+        run: |
+          wget https://github.com/Arachni/arachni/releases/download/v1.5.1/arachni-1.5.1-0.5.12-linux-x86_64.tar.gz
+          tar -xzf arachni-1.5.1-0.5.12-linux-x86_64.tar.gz
+          cd arachni-1.5.1-0.5.12/bin/
+          ./arachni http://localhost:3000/api --report-save-path=report.afr
+
+      - name: Publish DAST Report
+        uses: actions/upload-artifact@v2
+        with:
+          name: DAST Report
+          path: arachni-1.5.1-0.5.12/bin/report.afr

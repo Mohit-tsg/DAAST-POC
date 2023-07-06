@@ -14,21 +14,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install OWASP ZAP
-        run: |
-          sudo apt-get update -y
-          sudo apt-get install -y openjdk-11-jdk
-          sudo apt-get install -y wget
-          wget https://github.com/zaproxy/zaproxy/releases/download/v2.10.0/ZAP_2.10.0_Crossplatform.zip
-          unzip ZAP_2.10.0_Crossplatform.zip
-          export PATH=$PATH:$PWD/ZAP_2.10.0/
-
       - name: Run OWASP API Scan
         run: |
-          zap-api-scan.py -t https://6df8-103-211-15-147.ngrok-free.app/docs  -f openapi -d -J report.json
+          docker pull owasp/zap2docker-weekly
+          docker run --rm -v $(pwd):/zap/wrk/:rw -t owasp/zap2docker-weekly zap-api-scan.py -t https://6df8-103-211-15-147.ngrok-free.app/docs -f openapi -r report.html
 
       - name: Save OWASP API Scan Report
         uses: actions/upload-artifact@v2
         with:
           name: owasp-api-scan-report
-          path: report.json
+          path: report.html

@@ -1,0 +1,6 @@
+-config replacer.full_list\\(0\\).description=auth1\
+-config replacer.full_list\\(0\\).enable=true \
+-config replacer.full_list\\(0\\).matchtype=REQ_HEADER \
+-config replacer.full_list\\(1\\).matchstr=Authorization \
+-config replacer.full_list\\(1\\).regex=false \
+-config replacer.full_list\\(1\\).replacement="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaGl0LmJoYXJkd2FqQHN0dWRpb2dyYXBoZW5lLmNvbSIsInBhc3N3b3JkIjoiVGVzdEAxMjM0In0.ZFKVHwScQgBlaTVBBBlzyJh4n0dIiXYwBUYudgRp-6A==" 

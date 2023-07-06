@@ -34,7 +34,6 @@
     "migrate:run": "node_modules/.bin/typeorm migration:run",
     "prettier": "prettier --config --ignore-path .gitignore .prettierrc './**.ts' --check",
     "prettier:fix": "prettier --config --ignore-path .gitignore .prettierrc './**.ts' --write"
-    
   },
   "dependencies": {
     "@hapi/joi": "^17.1.1",
@@ -67,6 +66,7 @@
     "typeorm-naming-strategies": "^4.1.0",
     "uuid": "^8.3.2",
     "winston": "^3.3.3",
+    "zap-client": "^1.5.4",
     "zaproxy": "^1.0.1"
   },
   "devDependencies": {

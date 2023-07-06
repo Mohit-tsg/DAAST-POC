@@ -24,6 +24,6 @@ jobs:
       - name: Run OWASP ZAP scan
         run: |
           docker pull owasp/zap2docker-live  
-          docker run -t owasp/zap2docker-weekly zap-api-scan.py -t https://ea72-103-211-15-147.ngrok-free.app/api-docs -f openapi 
+          docker run -v $(pwd):/zap/wrk/:rw -t owasp/zap2docker-weekly zap-api-scan.py -t openapi.json -f openapi -z "-config /zap/wrk/options.prop" -r api-active-scan.html
 
           

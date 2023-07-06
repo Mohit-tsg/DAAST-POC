@@ -30,7 +30,7 @@ jobs:
           wget https://github.com/Arachni/arachni/releases/download/v1.5.1/arachni-1.5.1-0.5.12-linux-x86_64.tar.gz
           tar -xzf arachni-1.5.1-0.5.12-linux-x86_64.tar.gz
           cd arachni-1.5.1-0.5.12/bin/
-          ./arachni http://localhost:3000/api --report-save-path=report.afr
+          ./arachni https://6df8-103-211-15-147.ngrok-free.app/docs/#/cms.yaml --report-save-path=report.afr
 
       - name: Publish DAST Report
         uses: actions/upload-artifact@v2

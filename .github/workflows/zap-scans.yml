@@ -20,6 +20,10 @@ jobs:
           docker run --rm -v $(pwd):/zap/wrk/:rw -t owasp/zap2docker-weekly zap-api-scan.py -t https://6df8-103-211-15-147.ngrok-free.app/docs -f openapi -r /zap/wrk/report.html
 
       - name: Save OWASP API Scan Report
+        run: |
+          cp /zap/wrk/report.html $GITHUB_WORKSPACE
+
+      - name: Upload OWASP API Scan Report
         uses: actions/upload-artifact@v2
         with:
           name: owasp-api-scan-report

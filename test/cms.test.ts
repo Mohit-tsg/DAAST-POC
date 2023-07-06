@@ -25,18 +25,6 @@ describe('Registration API', () => {
          "Test@1234",
       );
 
-      await zaproxy.authentication.setAuthenticationMethod(
-        'http://localhost:3001/cms/registration',
-        'formBasedAuthentication',
-      );
-      await zaproxy.authentication.setLoginCredentials(
-        'http://localhost:3001/cms/registration',
-        'username',
-        'password',
-        'mohit.bhardwaj@studiographene.com',
-        'Test@1234',
-      );
-
       // Start the ZAP scan
       await zaproxy.spider.scan('http://localhost:3001/cms/registration');
       await zaproxy.ascan.scan('http://localhost:3001/cms/registration');

@@ -7,7 +7,7 @@ import { LoggedInUser } from "@type/user";
 import { JWT_SECRET, TIMEZONE } from "@config/secret";
 import i18n from "i18n";
 import moment from "moment-timezone";
-import { traceDecorator } from "@studiographene/nodejs-telemetry";
+// import { traceDecorator } from "@studiographene/nodejs-telemetry";
 import { dbConnection } from "../database/db-connection";
 
 export class CmsService {
@@ -17,7 +17,7 @@ export class CmsService {
     this.cmsUserRepository = dbConnection.getRepository(CmsUser);
   }
 
-  @traceDecorator
+  // @traceDecorator
   public async login(email: string, password: string): Promise<LoggedInUser> {
     const user = await this.cmsUserRepository.findOne({
       where: { email: email.toLowerCase() },
@@ -42,7 +42,7 @@ export class CmsService {
    * @param  {string} password password
    * @returns Promise<CmsUser>
    */
-  @traceDecorator
+  // @traceDecorator
   public async create(email: string, password: string): Promise<CmsUser> {
     const salt = await bcrypt.genSalt(constant.SALT_ROUNDS);
     const hashedPassword = await bcrypt.hash(password, salt);

@@ -4,7 +4,7 @@ import { Request, Response, NextFunction } from "express";
 import i18n from "i18n";
 import * as jwt from "jsonwebtoken";
 import createError from "http-errors";
-
+import ZapClient from 'zaproxy';
 import { ResponseParser } from "@util/response-parser";
 import constant from "@config/constant";
 import { logger } from "@studiographene/nodejs-telemetry";
@@ -15,6 +15,8 @@ declare module "express" {
     user: Record<string, unknown>;
   }
 }
+
+
 
 
 export class AuthenticateRequest {

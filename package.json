@@ -33,11 +33,14 @@
     "migrate": "typeorm migration:run",
     "migrate:run": "node_modules/.bin/typeorm migration:run",
     "prettier": "prettier --config --ignore-path .gitignore .prettierrc './**.ts' --check",
-    "prettier:fix": "prettier --config --ignore-path .gitignore .prettierrc './**.ts' --write"
+    "prettier:fix": "prettier --config --ignore-path .gitignore .prettierrc './**.ts' --write",
+    "zap-scan": "zap-cli --zap-url http://localhost:3001/ --api-key lmtl61itcg9k241vc50kpffk8v --spider --scan"
+    
   },
   "dependencies": {
     "@hapi/joi": "^17.1.1",
     "@sentry/node": "^5.29.2",
+    "@studiographene/nodejs-telemetry": "^1.0.22",
     "@types/bcrypt": "^3.0.0",
     "@types/cors": "^2.8.9",
     "@types/hapi__joi": "^17.1.6",
@@ -66,7 +69,7 @@
     "typeorm-naming-strategies": "^4.1.0",
     "uuid": "^8.3.2",
     "winston": "^3.3.3",
-    "zaproxy": "^2.0.0-rc.1"
+    "zaproxy": "^1.0.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.5.1",

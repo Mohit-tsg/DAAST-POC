@@ -2,16 +2,17 @@ import * as bodyParser from "body-parser";
 import { Application } from "express";
 import cors from "cors";
 import swaggerUi from "swagger-ui-express";
-import swaggerJSDoc from "swagger-jsdoc";
+// import swaggerJSDoc from "swagger-jsdoc";
 import i18n from "i18n";
 import * as Sentry from "@sentry/node";
 import { RequestIDMiddleware } from "@middleware/request-id";
 import errorMiddleware from "@middleware/error";
-import SwaggerDocument from "@util/swagger-document";
+// import SwaggerDocument from "@util/swagger-document";
 import { ENVIRONMENT, SENTRY_DSN } from "@config/secret";
 import constant from "@config/constant";
 import path from "path";
 import { dbConnection } from "@database/db-connection";
+import * as SwaggerDocument from '../../openapi.json'
 // import { logger } from "@studiographene/nodejs-telemetry";
 
 export class Kernel {
@@ -65,14 +66,20 @@ export class Kernel {
     app.use(i18n.init);
   }
 
-  public setupSwagger(app: Application): void {
+  // public setupSwagger(app: Application): void {
+  //   if (constant.PRODUCTION !== ENVIRONMENT) {
+  //     const swaggerSpecV1 = swaggerJSDoc(SwaggerDocument);
+  //     app.use("/docs", swaggerUi.serveFiles(swaggerSpecV1));
+  //     app.get("/docs", (req, res) => {
+  //       res.send(swaggerUi.generateHTML(swaggerSpecV1));
+  //     });
+  //   }
+  // }
+  public setupOpenAPI(app: Application): void {
     if (constant.PRODUCTION !== ENVIRONMENT) {
-      const swaggerSpecV1 = swaggerJSDoc(SwaggerDocument);
-      app.use("/docs", swaggerUi.serveFiles(swaggerSpecV1));
-      app.get("/docs", (req, res) => {
-        res.send(swaggerUi.generateHTML(swaggerSpecV1));
-      });
-    }
+    // Serve the OpenAPI specification
+      app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(SwaggerDocument));
+      }
   }
 
   public addCommonMiddleware(app: Application): void {

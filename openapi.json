@@ -1,0 +1,101 @@
+{
+	"openapi": "3.0.0",
+	"servers": [],
+	"info": {
+		"version": "1.0.0",
+		"title": "OPEN AI SPEC",
+		"description": "API for local repo"
+	},
+	"paths": {
+		"/cms/register": {
+			"post": {
+				"tags": [
+					"cms"
+				],
+				"operationId": "register",
+				"responses": {
+					"200": {
+						"description": "user registered successfully"
+					},
+					"400": {
+						"description": "bad request"
+					},
+					"500": {
+						"description": "server error"
+					}
+				},
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CmsRegistration"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/cms/login": {
+			"post": {
+				"tags": [
+					"cms"
+				],
+				"operationId": "login",
+				"responses": {
+					"200": {
+						"description": "login user successfully"
+					},
+					"400": {
+						"description": "bad request"
+					},
+					"500": {
+						"description": "server error"
+					}
+				},
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CmsLogin"
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"CmsLogin": {
+				"type": "object",
+				"required": [
+					"email",
+					"password"
+				],
+				"properties": {
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					}
+				}
+			},
+			"CmsRegistration": {
+				"type": "object",
+				"required": [
+					"email",
+					"password"
+				],
+				"properties": {
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					}
+				}
+			}
+		}
+	}
+}

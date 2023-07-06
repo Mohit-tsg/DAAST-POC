@@ -24,7 +24,8 @@ class App {
     this.kernel.addCommonMiddleware(this.app);
     await this.kernel.databaseConnection();
     this.kernel.initTranslation(this.app);
-    this.kernel.setupSwagger(this.app);
+    // this.kernel.setupSwagger(this.app);
+    this.kernel.setupOpenAPI(this.app);
     this.router.routes(this.app);
     this.kernel.sentryErrorHandler(this.app);
     this.kernel.errorMiddleware(this.app);

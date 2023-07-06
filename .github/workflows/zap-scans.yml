@@ -5,6 +5,7 @@ on:
     branches:
       - main  # Adjust the branch name as needed
   pull_request:
+    
 
 jobs:
   zap_scan:
@@ -19,6 +20,4 @@ jobs:
         with:
           token: ${{ secrets.GIT_TOKEN }}
           target: 'https://6df8-103-211-15-147.ngrok-free.app/docs'
-          permissions: 'write-all'
-
-    
+          # permissions: 'write-all'

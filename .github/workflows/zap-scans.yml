@@ -20,7 +20,7 @@ jobs:
           node-version: '14'
 
       - name: Install project dependencies
-        run: npm ci
+        run: npm install
 
       - name: Start API server
         run: npm run start:dev & sleep 5

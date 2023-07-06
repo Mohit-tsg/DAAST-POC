@@ -24,6 +24,6 @@ jobs:
       - name: Run OWASP ZAP scan
         run: |
           docker pull owasp/zap2docker-live  
-          docker run -v $(pwd):/zap/wrk/:rw --user root -t owasp/zap2docker-weekly zap-api-scan.py -t openapi.json -f openapi -z "-config /zap/wrk/options.prop" -r api-active-scan.html
+          docker run -v $(System.DefaultWorkingDirectory)/owaspzap:/zap/wrk:rw --user root -t owasp/zap2docker-weekly zap-api-scan.py -t openapi.json -f openapi -z "-config /zap/wrk/options.prop" -r api-active-scan.html
 
           

@@ -1,12 +1,6 @@
--config replacer.full_list\\(0\\).description=auth1\
--config replacer.full_list\\(0\\).enable=true \
--config replacer.full_list\\(0\\).matchtype=REQ_HEADER \
--config replacer.full_list\\(1\\).matchstr=Authorization \
--config replacer.full_list\\(1\\).regex=false \
--config replacer.full_list\\(1\\).replacement="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImIxNTNmMDA5LTc4MzctNGYxNC1hNzBmLTZjODhhOWNhZWNmNiIsImVtYWlsIjoibW9oaXRiaGFyZHdhakBzdHVkaW9ncmFwaGVuZS5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRzMG5XMmdjV2x4WDZZc1hyZVhtVDYuTkRhbW5aNy5tODZxM2dtQ3VCVGhacS9TWGFjYVNOeSIsImlhdCI6MTY4ODcxNjYxNH0.PXGtjXQAdpWWKVMyE_VScEbnqnoNZafTKmkclc3fL4Q" 
--config formhandler.fields.field\\(0\\).fieldId=booking_name \  
--config formhandler.fields.field\\(0\\).value=test \  
+-config formhandler.fields.field\\(0\\).fieldId=username \  
+-config formhandler.fields.field\\(0\\).value=test@example.com \  
 -config formhandler.fields.field\\(0\\).enabled=true \  
--config formhandler.fields.field\\(1\\).fieldId=booking_title \  
--config formhandler.fields.field\\(1\\).value=Trip \  
+-config formhandler.fields.field\\(1\\).fieldId=password \  
+-config formhandler.fields.field\\(1\\).value=Test@1234 \  
 -config formhandler.fields.field\\(1\\).enabled=true  

@@ -1,7 +1,10 @@
 import Joi from "@hapi/joi";
-import { loginRegisterValidation } from "./common";
+import { loginRegisterValidation,createBookingValidation } from "./common";
 
 const cmsUser = loginRegisterValidation;
+const  cmsBooking = createBookingValidation;
+
+
 
 const updateBookingStatus = Joi.object({
   bookingId: Joi.number().integer().required().messages({
@@ -11,4 +14,6 @@ const updateBookingStatus = Joi.object({
   }),
 });
 
-export { cmsUser, updateBookingStatus };
+
+
+export { cmsUser,cmsBooking, updateBookingStatus };

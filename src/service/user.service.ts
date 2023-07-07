@@ -5,7 +5,7 @@ import * as jwt from "jsonwebtoken";
 
 import { JWT_SECRET } from "@config/secret";
 import constant from "@config/constant";
-import { LoggedInUser, RegisterUser, UserEmailVerification } from "@type/user";
+import { LoggedInUser, RegisterUser, UserEmailVerification  } from "@type/user";
 import { User } from "@database/model/user.model";
 // import { logger, traceDecorator } from "@studiographene/nodejs-telemetry";
 import { UserRepo } from "@database/repository/user.repository";

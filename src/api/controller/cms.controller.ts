@@ -51,4 +51,23 @@ export class CmsController {
       .setMessage(i18n.__("SUCCESS"))
       .send(res);
   };
+
+  public createbooking = async (req: Request, res: Response): Promise<void> => {
+    // eslint-disable-next-line no-console
+    console.log("🚀 ~ file: cms.controller.ts:56 ~ CmsController ~ createbooking= ~ req:", req)
+    const {
+      // eslint-disable-next-line camelcase
+      body: { booking_name, booking_title ,booking_description },
+    } = req;
+
+    // console.log(this.cmsService.createbooking(booking_name, booking_title ,booking_description).get)
+    const response =await this.cmsService.createbooking(booking_name, booking_title ,booking_description);
+    
+    this.responseParser
+      .setStatus(true)
+      .setHttpCode(constant.HTTP_STATUS_OK)
+      .setBody(response)
+      .setMessage(i18n.__("SUCCESS"))
+      .send(res);
+  }
 }

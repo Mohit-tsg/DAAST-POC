@@ -54,6 +54,21 @@ const optionalRegNumberValidation = (): Joi.StringSchema =>
       "string.base": `Car registration number is not in valid format.`,
     });
 
+  const createBookingValidation = Joi.object({
+    booking_name: Joi.string().required().messages({
+      "string.base": "Booking_name must be a string",
+      "string.email": "Booking_name is invalid",
+      "any.required": "Booking_name is required",
+    }),
+    booking_title: Joi.string().optional().messages({
+      "string.base": "booking_title must be a string",
+      
+    }),
+    booking_description: Joi.string().optional().messages({
+      "string.base": "booking_description must be a string",
+    }),
+  });
+
 export {
   idValidation,
   loginRegisterValidation,
@@ -61,4 +76,5 @@ export {
   requiredStringValidation,
   requiredRegNumberValidation,
   optionalRegNumberValidation,
+  createBookingValidation
 };

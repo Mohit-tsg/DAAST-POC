@@ -55,6 +55,12 @@ export interface RegisterUser {
   isVerified?: boolean;
 }
 
+export interface CreateBooking{
+  booking_name :string,
+  booking_title:string,
+  booking_description:string,
+}
+
 export interface UserEmailVerification extends RegisterUser {
   message: string;
 }

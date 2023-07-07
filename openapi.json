@@ -5,7 +5,7 @@
 		"version": "1.0.0",
 		"description": "This is the REST API for Press Wash & Go Application"
 	},
-	"host": "631c-103-211-15-147.ngrok-free.app",
+	"host": "https://631c-103-211-15-147.ngrok-free.app",
 	"basePath": "",
 	"securityDefinitions": {
 		"bearerAuth": {
@@ -50,6 +50,39 @@
 				}
 			}
 		},
+		"/cms/createbooking": {
+			"post": {
+			  "tags": [
+				"cms"
+			  ],
+			  "description": "create booking",
+			  "produces": [
+				"application/json"
+			  ],
+			  "parameters": [
+				{
+				  "in": "body",
+				  "name": "createBooking",
+				  "description": "cms create booking",
+				  "required": true,
+				  "schema": {
+					"$ref": "#/definitions/createBooking"
+				  }
+				}
+			  ],
+			  "responses": {
+				"200": {
+				  "description": "Submitted survey results successfully..."
+				},
+				"400": {
+				  "description": "Bad request"
+				},
+				"500": {
+				  "description": "Server Error"
+				}
+			  }
+			}
+		  },
 		"/cms/bookings-listing": {
 			"get": {
 				"tags": [

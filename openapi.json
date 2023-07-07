@@ -155,6 +155,18 @@
 					"required": true
 				}
 			}
-		}
+		},
+		"createBooking": {
+			"properties": {
+			  "booking_name": {
+				"type": "string",
+				"required": true
+			  },
+			  "booking_title": {
+				"type": "string",
+				"required": false
+			  }
+			}
+		  }
 	}
 }

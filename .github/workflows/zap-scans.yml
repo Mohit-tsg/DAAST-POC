@@ -29,4 +29,4 @@ jobs:
               -config replacer.full_list(0).matchtype=REQ_HEADER \
               -config replacer.full_list(0).matchstr=x-auth-token \
               -config replacer.full_list(0).regex=false \
-              -config replacer.full_list(0).replacement=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYyOTMxYjg1LWU5NGUtNDY4MS04ZWM4LWFkOTQyZDNmM2MwZiIsImVtYWlsIjoibW9oaXRiaGFyZHdhakBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRZZ0daR2g2LlZqSmFIcHhRQzJoYXhlajFZdVV5eU8wLllhaHA1VE0wckxXWmJFdDBKaGN4TyIsImlhdCI6MTY4ODk2OTQ0MX0.2YPQA5dyZ6cu51Cdq2x3NkH3a7XdBQqikMVlskVqXHo"
+              -config replacer.full_list(0).replacement=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYyOTMxYjg1LWU5NGUtNDY4MS04ZWM4LWFkOTQyZDNmM2MwZiIsImVtYWlsIjoibW9oaXRiaGFyZHdhakBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRZZ0daR2g2LlZqSmFIcHhRQzJoYXhlajFZdVV5eU8wLllhaHA1VE0wckxXWmJFdDBKaGN4TyIsImlhdCI6MTY4OTE0Mzg4OX0.kt7OxkuFAlJQUfXxT1_KMpY1u6exmB8wO_bEPENU5TI"

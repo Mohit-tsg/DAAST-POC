@@ -23,7 +23,7 @@ jobs:
           docker run -v $(pwd):/zap/wrk/:rw -t owasp/zap2docker-weekly zap-api-scan.py \
           -t openapi.json \
           -f openapi \
-          touch api-active-scan.html \
+          -r api-active-scan.html \
           -z "-config replacer.full_list(0).description=auth1 \
               -config replacer.full_list(0).enabled=true \
               -config replacer.full_list(0).matchtype=REQ_HEADER \

@@ -7,7 +7,7 @@ on:
   pull_request:
 
 jobs:
-  zap_scan:
+  dast_scan:
     runs-on: ubuntu-latest
     permissions: write-all
     steps:

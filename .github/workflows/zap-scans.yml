@@ -45,12 +45,12 @@ jobs:
         run: npm install         
 
       - name: Start API server
-        run: npm run start & sleep 5
+        run: npm run start:dev & sleep 5
         
       - name: Run DAST Scan
         run: |
           docker pull owasp/zap2docker-weekly
-          docker run -v $(pwd):/zap/wrk/:rw -t owasp/zap2docker-weekly zap-api-scan.py \
+          docker run -v ${{github.workspace}}:/zap/wrk/:rw -t owasp/zap2docker-weekly zap-api-scan.py \
           -t openapi.json \
           -f openapi \
           -r api-active-scan.html \

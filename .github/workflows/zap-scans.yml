@@ -17,6 +17,9 @@ jobs:
       - name: Create report directory
         run: mkdir -p $GITHUB_WORKSPACE/zap-reports
 
+      - name: Change permissions of zap-reports directory
+        run: chmod -R 777 $GITHUB_WORKSPACE/zap-reports
+
       - name: Run DAST Scan
         run: |
           docker pull owasp/zap2docker-weekly

@@ -1,4 +1,4 @@
-name: OWASP ZAP Scan
+name: OWASP DAST Scan
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
   pull_request:
 
 jobs:
-  zap_scan:
+  dast_scan:
     runs-on: ubuntu-latest
     permissions: write-all
     strategy:
@@ -16,44 +16,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Get npm cache directory
-        id: myCacheStep
-        shell: bash
-        run: echo "dir=$(npm config get cache)" >> ${GITHUB_ENV}
-
-      - name: Cache node modules
-        id: npm-cache 
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-node-modules
-        with: 
-          path: node_modules
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-
-      - name: Install Dependencies
-        if: steps.npm-cache.outputs.cache-hit != 'true'
-        run: npm install         
-
-      - name: Start API server
-        run: npm run start:dev & sleep 5
         
       - name: Run DAST Scan
         run: |
           docker pull owasp/zap2docker-weekly
-          docker run -v ${{github.workspace}}:/zap/wrk/:rw -t owasp/zap2docker-weekly zap-api-scan.py \
+          docker run -v $(pwd):/zap/wrk/:rw -t owasp/zap2docker-weekly zap-api-scan.py \
           -t openapi.json \
           -f openapi \
-          -r api-active-scan.html \
+          touch /zap/wrk/api-active-scan.html \
           -z "-config replacer.full_list(0).description=auth1 \
               -config replacer.full_list(0).enabled=true \
               -config replacer.full_list(0).matchtype=REQ_HEADER \

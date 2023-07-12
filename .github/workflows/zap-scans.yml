@@ -7,7 +7,7 @@ on:
   pull_request:
 
 jobs:
-  zap_scan:
+  dast_scan:
     runs-on: ubuntu-latest
    
     steps:
@@ -24,7 +24,7 @@ jobs:
         run: npm run start & sleep 5
 
       - name: Create report directory
-        run: mkdir -p zap-reports
+        run: mkdir -p $GITHUB_WORKSPACE/zap-reports
         
       - name: Run DAST Scan
         run: |
@@ -32,7 +32,7 @@ jobs:
           docker run -v $(pwd):/zap/wrk/:rw -t owasp/zap2docker-weekly zap-api-scan.py \
           -t openapi.json \
           -f openapi \
-          -r /zap/wrk/zap-reports/api-active-scan.html \
+         -r $GITHUB_WORKSPACE/zap-reports/api-active-scan.html \
           -z "-config replacer.full_list(0).description=auth1 \
               -config replacer.full_list(0).enabled=true \
               -config replacer.full_list(0).matchtype=REQ_HEADER \

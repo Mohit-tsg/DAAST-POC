@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "module": "commonjs",
+    "resolveJsonModule":true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "emitDecoratorMetadata": true,
@@ -25,5 +26,5 @@
     },
     "typeRoots": ["./src/types", "./node_modules/@types"]
   },
-  "include": ["src/**/*", "config/secrets.ts", "config/constant.ts"]
+  "include": ["src/**/*", "config/secrets.ts", "config/constant.ts","typings/**/*.d.ts"]
 }

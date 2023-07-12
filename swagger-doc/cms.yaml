@@ -20,6 +20,27 @@ paths:
           description: Bad request
         500:
           description: Server Error
+  /cms/createbooking:
+     post:
+      tags:
+        - cms
+      description: create booking
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: createBooking
+          description: cms create booking
+          required: true
+          schema:
+            $ref: "#/definitions/createBooking"
+      responses:
+        200:
+          description: Submitted survey results successfully...
+        400:
+          description: Bad request
+        500:
+          description: Server Error
   /cms/bookings-listing:
     get:
       tags:
@@ -69,6 +90,14 @@ definitions: # Schema defination for request body
       password:
         type: string
         required: true
+  createBooking:
+    properties:
+      booking_name:
+        type: string
+        required: true
+      booking_title:
+        type: string
+        required: false   
   updateBookingStatus:
     properties:
       bookingId:

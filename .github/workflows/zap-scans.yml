@@ -1,24 +1,29 @@
-name: DAST check
+name: DAST Scan
 
-on: [push]
+on:
+  push:
+    branches:
+      - main  # Adjust the branch name as needed
+  pull_request:
 
 jobs:
-  zap_scan:
+  dast_scan:
     runs-on: ubuntu-latest
-    name: Scan the webapplication
+    permissions: write-all
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          ref: master
-      - name: ZAP Scan
-        uses: zaproxy/action-full-scan@v0.4.0
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          docker_name: 'owasp/zap2docker-stable'
-          target: 'https://www.zaproxy.org/'
-          rules_file_name: '.zap/rules.tsv'
-          cmd_options: '-a'
-
-
-
+        
+      - name: Run DAST Scan
+        run: |
+          docker pull owasp/zap2docker-weekly
+          docker run -v ${{ github.workspace }}:/zap/wrk/:rw -t owasp/zap2docker-weekly zap-api-scan.py \
+          -t openapi.json \
+          -f openapi \
+          -r api-active-scan.html \
+          -z "-config replacer.full_list(0).description=auth1 \
+              -config replacer.full_list(0).enabled=true \
+              -config replacer.full_list(0).matchtype=REQ_HEADER \
+              -config replacer.full_list(0).matchstr=x-auth-token \
+              -config replacer.full_list(0).regex=false \
+              -config replacer.full_list(0).replacement=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYyOTMxYjg1LWU5NGUtNDY4MS04ZWM4LWFkOTQyZDNmM2MwZiIsImVtYWlsIjoibW9oaXRiaGFyZHdhakBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRZZ0daR2g2LlZqSmFIcHhRQzJoYXhlajFZdVV5eU8wLllhaHA1VE0wckxXWmJFdDBKaGN4TyIsImlhdCI6MTY4ODk2OTQ0MX0.2YPQA5dyZ6cu51Cdq2x3NkH3a7XdBQqikMVlskVqXHo"

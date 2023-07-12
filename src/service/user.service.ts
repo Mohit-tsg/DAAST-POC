@@ -5,9 +5,9 @@ import * as jwt from "jsonwebtoken";
 
 import { JWT_SECRET } from "@config/secret";
 import constant from "@config/constant";
-import { LoggedInUser, RegisterUser, UserEmailVerification } from "@type/user";
+import { LoggedInUser, RegisterUser, UserEmailVerification  } from "@type/user";
 import { User } from "@database/model/user.model";
-import { logger, traceDecorator } from "@studiographene/nodejs-telemetry";
+// import { logger, traceDecorator } from "@studiographene/nodejs-telemetry";
 import { UserRepo } from "@database/repository/user.repository";
 import { dbConnection } from "../database/db-connection";
 
@@ -21,7 +21,7 @@ export class UserService {
    * @param  {string} password password
    * @returns Promise<User>
    */
-  @traceDecorator
+  // @traceDecorator
   public async register(
     email: string,
     password: string,
@@ -60,7 +60,7 @@ export class UserService {
   }
 
   // verify registered email
-  @traceDecorator
+  // @traceDecorator
   public async verifyRegisteredUserEmail(
     uniqueKey: string
   ): Promise<UserEmailVerification> {
@@ -86,7 +86,7 @@ export class UserService {
    * @param  {string} password
    * @returns Promise
    */
-  @traceDecorator
+  // @traceDecorator
   public async login(email: string, password: string): Promise<LoggedInUser> {
     const user = await this.userRepository.findOne({
       where: {
@@ -101,7 +101,7 @@ export class UserService {
     if (!validPassword) {
       throw new createError.BadRequest(i18n.__("incorrect_password"));
     }
-    logger.info("user", "UserService.login", { user });
+    // logger.info("user", "UserService.login", { user });
     const token = jwt.sign({ id: user.id, email: user.email }, JWT_SECRET);
     return {
       id: user.id,
@@ -114,7 +114,7 @@ export class UserService {
    * Get users details
    * @returns User[]
    */
-  @traceDecorator
+  // @traceDecorator
   public async getUser(): Promise<Partial<User[]>> {
     const data = await this.userRepository.find();
     return data;
@@ -125,7 +125,7 @@ export class UserService {
    * @param  {string} password
    * @returns Promise for a hashed string
    */
-  @traceDecorator
+  // @traceDecorator
   private async getEncryptedPassword(password: string): Promise<string> {
     const salt = await bcrypt.genSalt(constant.SALT_ROUNDS);
     return bcrypt.hash(password, salt);
@@ -136,7 +136,7 @@ export class UserService {
    * @param  {string} name
    * @returns Users
    */
-  @traceDecorator
+  // @traceDecorator
   public async getUsersByName(name: string): Promise<Partial<User[]>> {
     return UserRepo.findByName(name);
   }

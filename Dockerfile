@@ -26,5 +26,5 @@ COPY .npmrc .npmrc
 #Copy npm pacakges with prod flag
 RUN npm ci --omit=dev
 COPY .env .env
-EXPOSE 80
+EXPOSE 3001
 CMD ["npm","run","serve"]

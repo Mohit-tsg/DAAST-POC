@@ -3,7 +3,7 @@ import i18n from "i18n";
 import { ResponseParser } from "@util/response-parser";
 import constant from "@config/constant";
 import { UserService } from "@service/user.service";
-import { traceDecorator } from "@studiographene/nodejs-telemetry";
+// import { traceDecorator } from "@studiographene/nodejs-telemetry";
 
 export class BaseController {
   private responseParser: ResponseParser;
@@ -27,7 +27,7 @@ export class BaseController {
    * @param  {Response} res
    * @returns void
    */
-  @traceDecorator
+  // @traceDecorator
   public login = async (req: Request, res: Response): Promise<void> => {
     const {
       body: { email, password },
@@ -41,7 +41,7 @@ export class BaseController {
       .send(res);
   };
 
-  @traceDecorator
+  // @traceDecorator
   public getUser = async (req: Request, res: Response): Promise<void> => {
     const response = await this.userService.getUser();
     this.responseParser
@@ -57,7 +57,7 @@ export class BaseController {
    * @param  {Response} res
    * @returns void
    */
-  @traceDecorator
+  // @traceDecorator
   public register = async (req: Request, res: Response): Promise<void> => {
     const {
       body: { email, password, firstName, lastName, dob, marketing },
@@ -78,7 +78,7 @@ export class BaseController {
       .send(res);
   };
 
-  @traceDecorator
+  // @traceDecorator
   public verifyUserEmail = async (
     req: Request,
     res: Response,
@@ -97,7 +97,7 @@ export class BaseController {
       .send(res);
   };
 
-  @traceDecorator
+  // @traceDecorator
   public getUsersByName = async (
     req: Request,
     res: Response,

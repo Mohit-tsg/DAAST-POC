@@ -4,10 +4,9 @@ import { Request, Response, NextFunction } from "express";
 import i18n from "i18n";
 import * as jwt from "jsonwebtoken";
 import createError from "http-errors";
-
 import { ResponseParser } from "@util/response-parser";
 import constant from "@config/constant";
-import { logger } from "@studiographene/nodejs-telemetry";
+// import { logger } from "@studiographene/nodejs-telemetry";
 import { JWT_SECRET } from "@config/secret";
 
 declare module "express" {
@@ -15,6 +14,9 @@ declare module "express" {
     user: Record<string, unknown>;
   }
 }
+
+
+
 
 export class AuthenticateRequest {
   /**
@@ -25,7 +27,6 @@ export class AuthenticateRequest {
    */
   public validate(req: Request, res: Response, next: NextFunction): void {
     const token = req.header("x-auth-token");
-
     if (!token) {
       const responseParser = new ResponseParser();
       responseParser
@@ -39,16 +40,18 @@ export class AuthenticateRequest {
     }
 
     const decodedToken = jwt.verify(token, JWT_SECRET);
-    logger.debug("decoded-token", "AuthenticateRequest.validate", {
-      decodedToken,
-    });
+    // logger.debug("decoded-token", "AuthenticateRequest.validate", {
+    //   decodedToken,
+    // });
     if (!decodedToken) {
       throw new createError.Unauthorized(i18n.__("invalidToken"));
     }
     req.user = JSON.parse(JSON.stringify(decodedToken));
+    // eslint-disable-next-line no-console
+    console.log("🚀 ~ file: authenticate-request.ts:50 ~ AuthenticateRequest ~ validate ~ req.user:", req.user)
 
     // passing usr context to logger
-    logger.userContext({ id: req.user.id });
+    // logger.userContext({ id: req.user.id });
     next();
   }
 }

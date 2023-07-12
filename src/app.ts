@@ -22,13 +22,13 @@ class App {
     this.kernel.initSentry(this.app);
     this.kernel.initBodyParser(this.app);
     this.kernel.addCommonMiddleware(this.app);
-    this.kernel.attachRequestContext(this.app);
     await this.kernel.databaseConnection();
     this.kernel.initTranslation(this.app);
     this.kernel.setupSwagger(this.app);
     this.router.routes(this.app);
     this.kernel.sentryErrorHandler(this.app);
     this.kernel.errorMiddleware(this.app);
+    this.kernel.loggerMiddleware(this.app);
     unhandledExceptionHandler();
   }
 }

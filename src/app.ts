@@ -28,6 +28,7 @@ class App {
     this.router.routes(this.app);
     this.kernel.sentryErrorHandler(this.app);
     this.kernel.errorMiddleware(this.app);
+    this.kernel.loggerMiddleware(this.app);
     unhandledExceptionHandler();
   }
 }

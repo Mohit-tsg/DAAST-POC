@@ -123,11 +123,11 @@ td {
 	<h2>
 		
 		
-		Sites: https://631c-103-211-15-147.ngrok-free.app http://631c-103-211-15-147.ngrok-free.app
+		Sites: https://c256-14-140-115-103.ngrok-free.app http://c256-14-140-115-103.ngrok-free.app
 	</h2>
 
 	<h3>
-		Generated on Fri, 7 Jul 2023 08:28:08
+		Generated on Wed, 12 Jul 2023 05:10:51
 	</h3>
 
 	<h3>
@@ -164,7 +164,7 @@ td {
 					<div>Low</div>
 				</td>
 				<td align="center">
-					<div>3</div>
+					<div>6</div>
 				</td>
 			</tr>
 			<tr>
@@ -172,7 +172,7 @@ td {
 					<div>Informational</div>
 				</td>
 				<td align="center">
-					<div>3</div>
+					<div>6</div>
 				</td>
 			</tr>
 			<tr>
@@ -198,34 +198,49 @@ td {
 					align="center">Number of Instances</th>
 			</tr>
 			<tr>
-				<td><a href="#40040">CORS Misconfiguration</a></td>
+				<td><a href="#10055">CSP: Wildcard Directive</a></td>
 				<td align="center" class="risk-2">Medium</td>
-				<td align="center">4</td>
+				<td align="center">1</td>
 			</tr>
 			<tr>
-				<td><a href="#10098">Cross-Domain Misconfiguration</a></td>
+				<td><a href="#30002">Format String Error</a></td>
 				<td align="center" class="risk-2">Medium</td>
-				<td align="center">2</td>
+				<td align="center">1</td>
+			</tr>
+			<tr>
+				<td><a href="#100000">A Server Error response code was returned by the server</a></td>
+				<td align="center" class="risk-1">Low</td>
+				<td align="center">6</td>
+			</tr>
+			<tr>
+				<td><a href="#10063">Permissions Policy Header Not Set</a></td>
+				<td align="center" class="risk-1">Low</td>
+				<td align="center">1</td>
 			</tr>
 			<tr>
 				<td><a href="#10037">Server Leaks Information via &quot;X-Powered-By&quot; HTTP Response Header Field(s)</a></td>
 				<td align="center" class="risk-1">Low</td>
-				<td align="center">2</td>
+				<td align="center">5</td>
 			</tr>
 			<tr>
 				<td><a href="#10035">Strict-Transport-Security Header Not Set</a></td>
 				<td align="center" class="risk-1">Low</td>
-				<td align="center">2</td>
+				<td align="center">5</td>
 			</tr>
 			<tr>
 				<td><a href="#100001">Unexpected Content-Type was returned</a></td>
 				<td align="center" class="risk-1">Low</td>
-				<td align="center">62</td>
+				<td align="center">70</td>
+			</tr>
+			<tr>
+				<td><a href="#10021">X-Content-Type-Options Header Missing</a></td>
+				<td align="center" class="risk-1">Low</td>
+				<td align="center">2</td>
 			</tr>
 			<tr>
 				<td><a href="#100000">A Client Error response code was returned by the server</a></td>
 				<td align="center" class="risk-0">Informational</td>
-				<td align="center">72</td>
+				<td align="center">82</td>
 			</tr>
 			<tr>
 				<td><a href="#10111">Authentication Request Identified</a></td>
@@ -233,9 +248,24 @@ td {
 				<td align="center">2</td>
 			</tr>
 			<tr>
+				<td><a href="#40040">CORS Header</a></td>
+				<td align="center" class="risk-0">Informational</td>
+				<td align="center">8</td>
+			</tr>
+			<tr>
 				<td><a href="#10049">Non-Storable Content</a></td>
 				<td align="center" class="risk-0">Informational</td>
-				<td align="center">4</td>
+				<td align="center">6</td>
+			</tr>
+			<tr>
+				<td><a href="#10015">Re-examine Cache-control Directives</a></td>
+				<td align="center" class="risk-0">Informational</td>
+				<td align="center">2</td>
+			</tr>
+			<tr>
+				<td><a href="#10049">Storable and Cacheable Content</a></td>
+				<td align="center" class="risk-0">Informational</td>
+				<td align="center">1</td>
 			</tr>
 		</table>
 		<div class="spacer-lg"></div>
@@ -247,20 +277,14 @@ td {
 			<table class="results">
 				<tr height="24">
 					<th width="20%" class="risk-2"><a
-						id="40040"></a>
+						id="10055"></a>
 						<div>Medium</div></th>
-					<th class="risk-2">CORS Misconfiguration</th>
+					<th class="risk-2">CSP: Wildcard Directive</th>
 				</tr>
 				<tr>
 					<td width="20%">Description</td>
 					<td width="80%">
-							<div>This CORS misconfiguration could allow an attacker to perform AJAX queries to the vulnerable website from a malicious page loaded by the victim&#39;s user agent.</div>
-							<br />
-						
-							<div>In order to perform authenticated AJAX queries, the server must specify the header &quot;Access-Control-Allow-Credentials: true&quot; and the &quot;Access-Control-Allow-Origin&quot; header must be set to null or the malicious page&#39;s domain. Even if this misconfiguration doesn&#39;t allow authenticated AJAX requests, unauthenticated sensitive content can still be accessed (e.g intranet websites).</div>
-							<br />
-						
-							<div>A malicious page can belong to a malicious website but also a trusted website with flaws (e.g XSS, support of HTTP without TLS allowing code injection through MITM, etc).</div>
+							<div>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks. Including (but not limited to) Cross Site Scripting (XSS), and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page — covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</div>
 							
 						</td>
 				</tr>
@@ -271,7 +295,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app">https://631c-103-211-15-147.ngrok-free.app</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/getbooking/">https://c256-14-140-115-103.ngrok-free.app/cms/getbooking/</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -281,131 +305,65 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent2">Parameter</td>
-						<td width="80%"></td>
+						<td width="80%">Content-Security-Policy</td>
 					</tr>
 					<tr>
 						<td width="20%"
 							class="indent2">Attack</td>
-						<td width="80%">origin: https://1SGYHiUD.com</td>
+						<td width="80%"></td>
 					</tr>
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms">https://631c-103-211-15-147.ngrok-free.app/cms</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%">origin: https://1SGYHiUD.com</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms/createbooking">https://631c-103-211-15-147.ngrok-free.app/cms/createbooking</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">POST</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%">origin: https://1SGYHiUD.com</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms/login">https://631c-103-211-15-147.ngrok-free.app/cms/login</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">POST</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%">origin: https://1SGYHiUD.com</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
+						<td width="80%">default-src &#39;none&#39;</td>
 					</tr>
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">4</td>
+					<td width="80%">1</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
 					<td width="80%">
-							<div>If a web resource contains sensitive information, the origin should be properly specified in the Access-Control-Allow-Origin header. Only trusted websites needing this resource should be specified in this header, with the most secured protocol supported.</div>
+							<div>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</div>
 							
 						</td>
 				</tr>
 				<tr>
 					<td width="20%">Reference</td>
 					<td width="80%">
-							<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS</a>
+							<a href="http://www.w3.org/TR/CSP2/">http://www.w3.org/TR/CSP2/</a>
 							<br />
 						
-							<a href="https://portswigger.net/web-security/cors">https://portswigger.net/web-security/cors</a>
+							<a href="http://www.w3.org/TR/CSP/">http://www.w3.org/TR/CSP/</a>
+							<br />
+						
+							<a href="http://caniuse.com/#search=content+security+policy">http://caniuse.com/#search=content+security+policy</a>
+							<br />
+						
+							<a href="http://content-security-policy.com/">http://content-security-policy.com/</a>
+							<br />
+						
+							<a href="https://github.com/shapesecurity/salvation">https://github.com/shapesecurity/salvation</a>
+							<br />
+						
+							<a href="https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources">https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</a>
 							
 						</td>
 				</tr>
 				<tr>
 					<td width="20%">CWE Id</td>
 					<td width="80%"><a
-						href="https://cwe.mitre.org/data/definitions/942.html">942</a></td>
+						href="https://cwe.mitre.org/data/definitions/693.html">693</a></td>
 				</tr>
 				<tr>
 					<td width="20%">WASC Id</td>
-					<td width="80%">14</td>
+					<td width="80%">15</td>
 				</tr>
 				<tr>
 					<td width="20%">Plugin Id</td>
 					<td width="80%"><a
-						href="https://www.zaproxy.org/docs/alerts/40040/">40040</a></td>
+						href="https://www.zaproxy.org/docs/alerts/10055/">10055</a></td>
 				</tr>
 			</table>
 			<div class="spacer"></div>
@@ -413,14 +371,14 @@ td {
 			<table class="results">
 				<tr height="24">
 					<th width="20%" class="risk-2"><a
-						id="10098"></a>
+						id="30002"></a>
 						<div>Medium</div></th>
-					<th class="risk-2">Cross-Domain Misconfiguration</th>
+					<th class="risk-2">Format String Error</th>
 				</tr>
 				<tr>
 					<td width="20%">Description</td>
 					<td width="80%">
-							<div>Web browser data loading may be possible, due to a Cross Origin Resource Sharing (CORS) misconfiguration on the web server</div>
+							<div>A Format String error occurs when the submitted data of an input string is evaluated as a command by the application. </div>
 							
 						</td>
 				</tr>
@@ -431,7 +389,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms/createbooking">https://631c-103-211-15-147.ngrok-free.app/cms/createbooking</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/register">https://c256-14-140-115-103.ngrok-free.app/cms/register</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -441,79 +399,351 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent2">Parameter</td>
-						<td width="80%"></td>
+						<td width="80%">password</td>
 					</tr>
 					<tr>
 						<td width="20%"
 							class="indent2">Attack</td>
-						<td width="80%"></td>
+						<td width="80%">ZAP%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s
+</td>
 					</tr>
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">Access-Control-Allow-Origin: *</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms/login">https://631c-103-211-15-147.ngrok-free.app/cms/login</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">POST</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
 						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">Access-Control-Allow-Origin: *</td>
 					</tr>
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">2</td>
+					<td width="80%">1</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
 					<td width="80%">
-							<div>Ensure that sensitive data is not available in an unauthenticated manner (using IP address white-listing, for instance).</div>
-							<br />
-						
-							<div>Configure the &quot;Access-Control-Allow-Origin&quot; HTTP header to a more restrictive set of domains, or remove all CORS headers entirely, to allow the web browser to enforce the Same Origin Policy (SOP) in a more restrictive manner.</div>
+							<div>Rewrite the background program using proper deletion of bad character strings.  This will require a recompile of the background executable.</div>
 							
 						</td>
 				</tr>
 				<tr>
 					<td width="20%">Reference</td>
 					<td width="80%">
-							<a href="https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy">https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy</a>
+							<a href="https://owasp.org/www-community/attacks/Format_string_attack">https://owasp.org/www-community/attacks/Format_string_attack</a>
 							
 						</td>
 				</tr>
 				<tr>
 					<td width="20%">CWE Id</td>
 					<td width="80%"><a
-						href="https://cwe.mitre.org/data/definitions/264.html">264</a></td>
+						href="https://cwe.mitre.org/data/definitions/134.html">134</a></td>
 				</tr>
 				<tr>
 					<td width="20%">WASC Id</td>
-					<td width="80%">14</td>
+					<td width="80%">6</td>
 				</tr>
 				<tr>
 					<td width="20%">Plugin Id</td>
 					<td width="80%"><a
-						href="https://www.zaproxy.org/docs/alerts/10098/">10098</a></td>
+						href="https://www.zaproxy.org/docs/alerts/30002/">30002</a></td>
+				</tr>
+			</table>
+			<div class="spacer"></div>
+		
+			<table class="results">
+				<tr height="24">
+					<th width="20%" class="risk-1"><a
+						id="100000"></a>
+						<div>Low</div></th>
+					<th class="risk-1">A Server Error response code was returned by the server</th>
+				</tr>
+				<tr>
+					<td width="20%">Description</td>
+					<td width="80%">
+							<div>A response code of 500 was returned by the server.</div>
+							<br />
+						
+							<div>This may indicate that the application is failing to handle unexpected input correctly.</div>
+							<br />
+						
+							<div>Raised by the &#39;Alert on HTTP Response Code Error&#39; script</div>
+							
+						</td>
+				</tr>
+				<TR vAlign="top">
+					<TD colspan="2"></TD>
+				</TR>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/getbooking/.env">https://c256-14-140-115-103.ngrok-free.app/cms/getbooking/.env</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">HTTP/1.1 500</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/getbooking/.htaccess">https://c256-14-140-115-103.ngrok-free.app/cms/getbooking/.htaccess</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">HTTP/1.1 500</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/getbooking/1901507546337672996">https://c256-14-140-115-103.ngrok-free.app/cms/getbooking/1901507546337672996</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">HTTP/1.1 500</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/getbooking/trace.axd">https://c256-14-140-115-103.ngrok-free.app/cms/getbooking/trace.axd</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">HTTP/1.1 500</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/createbooking">https://c256-14-140-115-103.ngrok-free.app/cms/createbooking</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">HTTP/1.1 500</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/register">https://c256-14-140-115-103.ngrok-free.app/cms/register</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">HTTP/1.1 500</td>
+					</tr>
+				
+				<tr>
+					<td width="20%">Instances</td>
+					<td width="80%">6</td>
+				</tr>
+				<tr>
+					<td width="20%">Solution</td>
+					<td width="80%"></td>
+				</tr>
+				<tr>
+					<td width="20%">Reference</td>
+					<td width="80%"></td>
+				</tr>
+				<tr>
+					<td width="20%">CWE Id</td>
+					<td width="80%"><a
+						href="https://cwe.mitre.org/data/definitions/388.html">388</a></td>
+				</tr>
+				<tr>
+					<td width="20%">WASC Id</td>
+					<td width="80%">20</td>
+				</tr>
+				<tr>
+					<td width="20%">Plugin Id</td>
+					<td width="80%"><a
+						href="https://www.zaproxy.org/docs/alerts/100000/">100000</a></td>
+				</tr>
+			</table>
+			<div class="spacer"></div>
+		
+			<table class="results">
+				<tr height="24">
+					<th width="20%" class="risk-1"><a
+						id="10063"></a>
+						<div>Low</div></th>
+					<th class="risk-1">Permissions Policy Header Not Set</th>
+				</tr>
+				<tr>
+					<td width="20%">Description</td>
+					<td width="80%">
+							<div>Permissions Policy Header is an added layer of security that helps to restrict from unauthorized access or usage of browser/client features by web resources. This policy ensures the user privacy by limiting or specifying the features of the browsers can be used by the web resources. Permissions Policy provides a set of standard HTTP headers that allow website owners to limit which features of browsers can be used by the page such as camera, microphone, location, full screen etc.</div>
+							
+						</td>
+				</tr>
+				<TR vAlign="top">
+					<TD colspan="2"></TD>
+				</TR>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/getbooking/">https://c256-14-140-115-103.ngrok-free.app/cms/getbooking/</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+				
+				<tr>
+					<td width="20%">Instances</td>
+					<td width="80%">1</td>
+				</tr>
+				<tr>
+					<td width="20%">Solution</td>
+					<td width="80%">
+							<div>Ensure that your web server, application server, load balancer, etc. is configured to set the Permissions-Policy header.</div>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">Reference</td>
+					<td width="80%">
+							<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy</a>
+							<br />
+						
+							<a href="https://developers.google.com/web/updates/2018/06/feature-policy">https://developers.google.com/web/updates/2018/06/feature-policy</a>
+							<br />
+						
+							<a href="https://scotthelme.co.uk/a-new-security-header-feature-policy/">https://scotthelme.co.uk/a-new-security-header-feature-policy/</a>
+							<br />
+						
+							<a href="https://w3c.github.io/webappsec-feature-policy/">https://w3c.github.io/webappsec-feature-policy/</a>
+							<br />
+						
+							<a href="https://www.smashingmagazine.com/2018/12/feature-policy/">https://www.smashingmagazine.com/2018/12/feature-policy/</a>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">CWE Id</td>
+					<td width="80%"><a
+						href="https://cwe.mitre.org/data/definitions/693.html">693</a></td>
+				</tr>
+				<tr>
+					<td width="20%">WASC Id</td>
+					<td width="80%">15</td>
+				</tr>
+				<tr>
+					<td width="20%">Plugin Id</td>
+					<td width="80%"><a
+						href="https://www.zaproxy.org/docs/alerts/10063/">10063</a></td>
 				</tr>
 			</table>
 			<div class="spacer"></div>
@@ -539,7 +769,59 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms/createbooking">https://631c-103-211-15-147.ngrok-free.app/cms/createbooking</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/getallBooking">https://c256-14-140-115-103.ngrok-free.app/cms/getallBooking</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">X-Powered-By: Express</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/getbooking/">https://c256-14-140-115-103.ngrok-free.app/cms/getbooking/</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">X-Powered-By: Express</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/createbooking">https://c256-14-140-115-103.ngrok-free.app/cms/createbooking</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -565,7 +847,33 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms/login">https://631c-103-211-15-147.ngrok-free.app/cms/login</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/login">https://c256-14-140-115-103.ngrok-free.app/cms/login</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">X-Powered-By: Express</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/register">https://c256-14-140-115-103.ngrok-free.app/cms/register</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -590,7 +898,7 @@ td {
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">2</td>
+					<td width="80%">5</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -647,7 +955,59 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms/createbooking">https://631c-103-211-15-147.ngrok-free.app/cms/createbooking</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/getallBooking">https://c256-14-140-115-103.ngrok-free.app/cms/getallBooking</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/getbooking/">https://c256-14-140-115-103.ngrok-free.app/cms/getbooking/</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/createbooking">https://c256-14-140-115-103.ngrok-free.app/cms/createbooking</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -673,7 +1033,33 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms/login">https://631c-103-211-15-147.ngrok-free.app/cms/login</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/login">https://c256-14-140-115-103.ngrok-free.app/cms/login</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/register">https://c256-14-140-115-103.ngrok-free.app/cms/register</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -698,7 +1084,7 @@ td {
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">2</td>
+					<td width="80%">5</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -770,7 +1156,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/._darcs">https://631c-103-211-15-147.ngrok-free.app/._darcs</a></td>
+						<td width="80%"><a href="http://c256-14-140-115-103.ngrok-free.app/cms/getbooking/">http://c256-14-140-115-103.ngrok-free.app/cms/getbooking/</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -796,7 +1182,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/.bzr">https://631c-103-211-15-147.ngrok-free.app/.bzr</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/._darcs">https://c256-14-140-115-103.ngrok-free.app/._darcs</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -822,7 +1208,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/.DS_Store">https://631c-103-211-15-147.ngrok-free.app/.DS_Store</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/.bzr">https://c256-14-140-115-103.ngrok-free.app/.bzr</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -848,7 +1234,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/.env">https://631c-103-211-15-147.ngrok-free.app/.env</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/.DS_Store">https://c256-14-140-115-103.ngrok-free.app/.DS_Store</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -874,7 +1260,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/.git/config">https://631c-103-211-15-147.ngrok-free.app/.git/config</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/.env">https://c256-14-140-115-103.ngrok-free.app/.env</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -900,7 +1286,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/.hg">https://631c-103-211-15-147.ngrok-free.app/.hg</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/.git/config">https://c256-14-140-115-103.ngrok-free.app/.git/config</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -926,7 +1312,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/.htaccess">https://631c-103-211-15-147.ngrok-free.app/.htaccess</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/.hg">https://c256-14-140-115-103.ngrok-free.app/.hg</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -952,7 +1338,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/.idea/WebServers.xml">https://631c-103-211-15-147.ngrok-free.app/.idea/WebServers.xml</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/.htaccess">https://c256-14-140-115-103.ngrok-free.app/.htaccess</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -978,7 +1364,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/.php_cs.cache">https://631c-103-211-15-147.ngrok-free.app/.php_cs.cache</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/.idea/WebServers.xml">https://c256-14-140-115-103.ngrok-free.app/.idea/WebServers.xml</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1004,7 +1390,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/.ssh/id_dsa">https://631c-103-211-15-147.ngrok-free.app/.ssh/id_dsa</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/.php_cs.cache">https://c256-14-140-115-103.ngrok-free.app/.php_cs.cache</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1030,7 +1416,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/.ssh/id_rsa">https://631c-103-211-15-147.ngrok-free.app/.ssh/id_rsa</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/.ssh/id_dsa">https://c256-14-140-115-103.ngrok-free.app/.ssh/id_dsa</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1056,7 +1442,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/.svn/entries">https://631c-103-211-15-147.ngrok-free.app/.svn/entries</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/.ssh/id_rsa">https://c256-14-140-115-103.ngrok-free.app/.ssh/id_rsa</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1082,7 +1468,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/.svn/wc.db">https://631c-103-211-15-147.ngrok-free.app/.svn/wc.db</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/.svn/entries">https://c256-14-140-115-103.ngrok-free.app/.svn/entries</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1108,7 +1494,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/1180468937994789374">https://631c-103-211-15-147.ngrok-free.app/1180468937994789374</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/.svn/wc.db">https://c256-14-140-115-103.ngrok-free.app/.svn/wc.db</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1134,7 +1520,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/_framework/blazor.boot.json">https://631c-103-211-15-147.ngrok-free.app/_framework/blazor.boot.json</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/5625041889457945539">https://c256-14-140-115-103.ngrok-free.app/5625041889457945539</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1160,7 +1546,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/_wpeprivate/config.json">https://631c-103-211-15-147.ngrok-free.app/_wpeprivate/config.json</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/_framework/blazor.boot.json">https://c256-14-140-115-103.ngrok-free.app/_framework/blazor.boot.json</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1186,7 +1572,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/adminer.php">https://631c-103-211-15-147.ngrok-free.app/adminer.php</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/_wpeprivate/config.json">https://c256-14-140-115-103.ngrok-free.app/_wpeprivate/config.json</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1212,7 +1598,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/app/etc/local.xml">https://631c-103-211-15-147.ngrok-free.app/app/etc/local.xml</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/adminer.php">https://c256-14-140-115-103.ngrok-free.app/adminer.php</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1238,7 +1624,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/BitKeeper">https://631c-103-211-15-147.ngrok-free.app/BitKeeper</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/app/etc/local.xml">https://c256-14-140-115-103.ngrok-free.app/app/etc/local.xml</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1264,7 +1650,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/CHANGELOG.txt">https://631c-103-211-15-147.ngrok-free.app/CHANGELOG.txt</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/BitKeeper">https://c256-14-140-115-103.ngrok-free.app/BitKeeper</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1290,7 +1676,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms">https://631c-103-211-15-147.ngrok-free.app/cms</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/CHANGELOG.txt">https://c256-14-140-115-103.ngrok-free.app/CHANGELOG.txt</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1316,7 +1702,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms/">https://631c-103-211-15-147.ngrok-free.app/cms/</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms">https://c256-14-140-115-103.ngrok-free.app/cms</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1342,7 +1728,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms/.env">https://631c-103-211-15-147.ngrok-free.app/cms/.env</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/">https://c256-14-140-115-103.ngrok-free.app/cms/</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1368,7 +1754,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms/.htaccess">https://631c-103-211-15-147.ngrok-free.app/cms/.htaccess</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/.env">https://c256-14-140-115-103.ngrok-free.app/cms/.env</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1394,7 +1780,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms/4002984505663531282">https://631c-103-211-15-147.ngrok-free.app/cms/4002984505663531282</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/.htaccess">https://c256-14-140-115-103.ngrok-free.app/cms/.htaccess</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1420,7 +1806,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms/actuator/health">https://631c-103-211-15-147.ngrok-free.app/cms/actuator/health</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/7136037428006698389">https://c256-14-140-115-103.ngrok-free.app/cms/7136037428006698389</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1446,7 +1832,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms/createbooking?class.module.classLoader.DefaultAssertionStatus=nonsense">https://631c-103-211-15-147.ngrok-free.app/cms/createbooking?class.module.classLoader.DefaultAssertionStatus=nonsense</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/actuator/health">https://c256-14-140-115-103.ngrok-free.app/cms/actuator/health</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1472,7 +1858,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms/trace.axd">https://631c-103-211-15-147.ngrok-free.app/cms/trace.axd</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/createbooking?class.module.classLoader.DefaultAssertionStatus=nonsense">https://c256-14-140-115-103.ngrok-free.app/cms/createbooking?class.module.classLoader.DefaultAssertionStatus=nonsense</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1498,7 +1884,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms?class.module.classLoader.DefaultAssertionStatus=nonsense">https://631c-103-211-15-147.ngrok-free.app/cms?class.module.classLoader.DefaultAssertionStatus=nonsense</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/getbooking">https://c256-14-140-115-103.ngrok-free.app/cms/getbooking</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1524,7 +1910,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/composer.json">https://631c-103-211-15-147.ngrok-free.app/composer.json</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/getbooking/">https://c256-14-140-115-103.ngrok-free.app/cms/getbooking/</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1550,7 +1936,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/composer.lock">https://631c-103-211-15-147.ngrok-free.app/composer.lock</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/getbooking/?class.module.classLoader.DefaultAssertionStatus=nonsense">https://c256-14-140-115-103.ngrok-free.app/cms/getbooking/?class.module.classLoader.DefaultAssertionStatus=nonsense</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1576,7 +1962,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/config/database.yml">https://631c-103-211-15-147.ngrok-free.app/config/database.yml</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/getbooking?class.module.classLoader.DefaultAssertionStatus=nonsense">https://c256-14-140-115-103.ngrok-free.app/cms/getbooking?class.module.classLoader.DefaultAssertionStatus=nonsense</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1602,7 +1988,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/config/databases.yml">https://631c-103-211-15-147.ngrok-free.app/config/databases.yml</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/trace.axd">https://c256-14-140-115-103.ngrok-free.app/cms/trace.axd</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1628,7 +2014,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/core">https://631c-103-211-15-147.ngrok-free.app/core</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms?class.module.classLoader.DefaultAssertionStatus=nonsense">https://c256-14-140-115-103.ngrok-free.app/cms?class.module.classLoader.DefaultAssertionStatus=nonsense</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1654,7 +2040,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/CVS/root">https://631c-103-211-15-147.ngrok-free.app/CVS/root</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/composer.json">https://c256-14-140-115-103.ngrok-free.app/composer.json</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1680,7 +2066,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/DEADJOE">https://631c-103-211-15-147.ngrok-free.app/DEADJOE</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/composer.lock">https://c256-14-140-115-103.ngrok-free.app/composer.lock</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1706,7 +2092,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/elmah.axd">https://631c-103-211-15-147.ngrok-free.app/elmah.axd</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/config/database.yml">https://c256-14-140-115-103.ngrok-free.app/config/database.yml</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1732,7 +2118,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/filezilla.xml">https://631c-103-211-15-147.ngrok-free.app/filezilla.xml</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/config/databases.yml">https://c256-14-140-115-103.ngrok-free.app/config/databases.yml</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1758,7 +2144,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/i.php">https://631c-103-211-15-147.ngrok-free.app/i.php</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/core">https://c256-14-140-115-103.ngrok-free.app/core</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1784,7 +2170,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/id_dsa">https://631c-103-211-15-147.ngrok-free.app/id_dsa</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/CVS/root">https://c256-14-140-115-103.ngrok-free.app/CVS/root</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1810,7 +2196,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/id_rsa">https://631c-103-211-15-147.ngrok-free.app/id_rsa</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/DEADJOE">https://c256-14-140-115-103.ngrok-free.app/DEADJOE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1836,7 +2222,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/info.php">https://631c-103-211-15-147.ngrok-free.app/info.php</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/elmah.axd">https://c256-14-140-115-103.ngrok-free.app/elmah.axd</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1862,7 +2248,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/key.pem">https://631c-103-211-15-147.ngrok-free.app/key.pem</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/filezilla.xml">https://c256-14-140-115-103.ngrok-free.app/filezilla.xml</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1888,7 +2274,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/lfm.php">https://631c-103-211-15-147.ngrok-free.app/lfm.php</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/i.php">https://c256-14-140-115-103.ngrok-free.app/i.php</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1914,7 +2300,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/myserver.key">https://631c-103-211-15-147.ngrok-free.app/myserver.key</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/id_dsa">https://c256-14-140-115-103.ngrok-free.app/id_dsa</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1940,7 +2326,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/phpinfo.php">https://631c-103-211-15-147.ngrok-free.app/phpinfo.php</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/id_rsa">https://c256-14-140-115-103.ngrok-free.app/id_rsa</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1966,7 +2352,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/privatekey.key">https://631c-103-211-15-147.ngrok-free.app/privatekey.key</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/info.php">https://c256-14-140-115-103.ngrok-free.app/info.php</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1992,7 +2378,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/server-info">https://631c-103-211-15-147.ngrok-free.app/server-info</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/key.pem">https://c256-14-140-115-103.ngrok-free.app/key.pem</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2018,7 +2404,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/server-status">https://631c-103-211-15-147.ngrok-free.app/server-status</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/lfm.php">https://c256-14-140-115-103.ngrok-free.app/lfm.php</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2044,7 +2430,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/server.key">https://631c-103-211-15-147.ngrok-free.app/server.key</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/myserver.key">https://c256-14-140-115-103.ngrok-free.app/myserver.key</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2070,7 +2456,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/sftp-config.json">https://631c-103-211-15-147.ngrok-free.app/sftp-config.json</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/phpinfo.php">https://c256-14-140-115-103.ngrok-free.app/phpinfo.php</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2096,7 +2482,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/sitemanager.xml">https://631c-103-211-15-147.ngrok-free.app/sitemanager.xml</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/privatekey.key">https://c256-14-140-115-103.ngrok-free.app/privatekey.key</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2122,7 +2508,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/sites/default/files/.ht.sqlite">https://631c-103-211-15-147.ngrok-free.app/sites/default/files/.ht.sqlite</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/server-info">https://c256-14-140-115-103.ngrok-free.app/server-info</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2148,7 +2534,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/sites/default/private/files/backup_migrate/scheduled/test.txt">https://631c-103-211-15-147.ngrok-free.app/sites/default/private/files/backup_migrate/scheduled/test.txt</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/server-status">https://c256-14-140-115-103.ngrok-free.app/server-status</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2174,7 +2560,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/test.php">https://631c-103-211-15-147.ngrok-free.app/test.php</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/server.key">https://c256-14-140-115-103.ngrok-free.app/server.key</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2200,7 +2586,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/trace.axd">https://631c-103-211-15-147.ngrok-free.app/trace.axd</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/sftp-config.json">https://c256-14-140-115-103.ngrok-free.app/sftp-config.json</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2226,7 +2612,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/vb_test.php">https://631c-103-211-15-147.ngrok-free.app/vb_test.php</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/sitemanager.xml">https://c256-14-140-115-103.ngrok-free.app/sitemanager.xml</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2252,7 +2638,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/vim_settings.xml">https://631c-103-211-15-147.ngrok-free.app/vim_settings.xml</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/sites/default/files/.ht.sqlite">https://c256-14-140-115-103.ngrok-free.app/sites/default/files/.ht.sqlite</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2278,7 +2664,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/winscp.ini">https://631c-103-211-15-147.ngrok-free.app/winscp.ini</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/sites/default/private/files/backup_migrate/scheduled/test.txt">https://c256-14-140-115-103.ngrok-free.app/sites/default/private/files/backup_migrate/scheduled/test.txt</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2304,7 +2690,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/WS_FTP.ini">https://631c-103-211-15-147.ngrok-free.app/WS_FTP.ini</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/test.php">https://c256-14-140-115-103.ngrok-free.app/test.php</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2330,7 +2716,137 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app">https://631c-103-211-15-147.ngrok-free.app</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/trace.axd">https://c256-14-140-115-103.ngrok-free.app/trace.axd</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">text/html</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/vb_test.php">https://c256-14-140-115-103.ngrok-free.app/vb_test.php</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">text/html</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/vim_settings.xml">https://c256-14-140-115-103.ngrok-free.app/vim_settings.xml</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">text/html</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/winscp.ini">https://c256-14-140-115-103.ngrok-free.app/winscp.ini</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">text/html</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/WS_FTP.ini">https://c256-14-140-115-103.ngrok-free.app/WS_FTP.ini</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">text/html</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app">https://c256-14-140-115-103.ngrok-free.app</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2356,7 +2872,85 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms">https://631c-103-211-15-147.ngrok-free.app/cms</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms">https://c256-14-140-115-103.ngrok-free.app/cms</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">text/html</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/getallBooking">https://c256-14-140-115-103.ngrok-free.app/cms/getallBooking</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">text/html</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/getbooking">https://c256-14-140-115-103.ngrok-free.app/cms/getbooking</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">text/html</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/getbooking/">https://c256-14-140-115-103.ngrok-free.app/cms/getbooking/</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2381,7 +2975,7 @@ td {
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">62</td>
+					<td width="80%">70</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -2403,6 +2997,117 @@ td {
 					<td width="20%">Plugin Id</td>
 					<td width="80%"><a
 						href="https://www.zaproxy.org/docs/alerts/100001/">100001</a></td>
+				</tr>
+			</table>
+			<div class="spacer"></div>
+		
+			<table class="results">
+				<tr height="24">
+					<th width="20%" class="risk-1"><a
+						id="10021"></a>
+						<div>Low</div></th>
+					<th class="risk-1">X-Content-Type-Options Header Missing</th>
+				</tr>
+				<tr>
+					<td width="20%">Description</td>
+					<td width="80%">
+							<div>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to &#39;nosniff&#39;. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</div>
+							
+						</td>
+				</tr>
+				<TR vAlign="top">
+					<TD colspan="2"></TD>
+				</TR>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/getallBooking">https://c256-14-140-115-103.ngrok-free.app/cms/getallBooking</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">X-Content-Type-Options</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/createbooking">https://c256-14-140-115-103.ngrok-free.app/cms/createbooking</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">X-Content-Type-Options</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+				
+				<tr>
+					<td width="20%">Instances</td>
+					<td width="80%">2</td>
+				</tr>
+				<tr>
+					<td width="20%">Solution</td>
+					<td width="80%">
+							<div>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to &#39;nosniff&#39; for all web pages.</div>
+							<br />
+						
+							<div>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</div>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">Reference</td>
+					<td width="80%">
+							<a href="http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx">http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx</a>
+							<br />
+						
+							<a href="https://owasp.org/www-community/Security_Headers">https://owasp.org/www-community/Security_Headers</a>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">CWE Id</td>
+					<td width="80%"><a
+						href="https://cwe.mitre.org/data/definitions/693.html">693</a></td>
+				</tr>
+				<tr>
+					<td width="20%">WASC Id</td>
+					<td width="80%">15</td>
+				</tr>
+				<tr>
+					<td width="20%">Plugin Id</td>
+					<td width="80%"><a
+						href="https://www.zaproxy.org/docs/alerts/10021/">10021</a></td>
 				</tr>
 			</table>
 			<div class="spacer"></div>
@@ -2434,7 +3139,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/._darcs">https://631c-103-211-15-147.ngrok-free.app/._darcs</a></td>
+						<td width="80%"><a href="http://c256-14-140-115-103.ngrok-free.app/cms/getbooking/">http://c256-14-140-115-103.ngrok-free.app/cms/getbooking/</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2460,7 +3165,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/.bzr">https://631c-103-211-15-147.ngrok-free.app/.bzr</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/._darcs">https://c256-14-140-115-103.ngrok-free.app/._darcs</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2486,7 +3191,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/.DS_Store">https://631c-103-211-15-147.ngrok-free.app/.DS_Store</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/.bzr">https://c256-14-140-115-103.ngrok-free.app/.bzr</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2512,7 +3217,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/.env">https://631c-103-211-15-147.ngrok-free.app/.env</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/.DS_Store">https://c256-14-140-115-103.ngrok-free.app/.DS_Store</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2538,7 +3243,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/.git/config">https://631c-103-211-15-147.ngrok-free.app/.git/config</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/.env">https://c256-14-140-115-103.ngrok-free.app/.env</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2564,7 +3269,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/.hg">https://631c-103-211-15-147.ngrok-free.app/.hg</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/.git/config">https://c256-14-140-115-103.ngrok-free.app/.git/config</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2590,7 +3295,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/.htaccess">https://631c-103-211-15-147.ngrok-free.app/.htaccess</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/.hg">https://c256-14-140-115-103.ngrok-free.app/.hg</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2616,7 +3321,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/.idea/WebServers.xml">https://631c-103-211-15-147.ngrok-free.app/.idea/WebServers.xml</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/.htaccess">https://c256-14-140-115-103.ngrok-free.app/.htaccess</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2642,7 +3347,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/.php_cs.cache">https://631c-103-211-15-147.ngrok-free.app/.php_cs.cache</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/.idea/WebServers.xml">https://c256-14-140-115-103.ngrok-free.app/.idea/WebServers.xml</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2668,7 +3373,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/.ssh/id_dsa">https://631c-103-211-15-147.ngrok-free.app/.ssh/id_dsa</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/.php_cs.cache">https://c256-14-140-115-103.ngrok-free.app/.php_cs.cache</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2694,7 +3399,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/.ssh/id_rsa">https://631c-103-211-15-147.ngrok-free.app/.ssh/id_rsa</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/.ssh/id_dsa">https://c256-14-140-115-103.ngrok-free.app/.ssh/id_dsa</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2720,7 +3425,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/.svn/entries">https://631c-103-211-15-147.ngrok-free.app/.svn/entries</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/.ssh/id_rsa">https://c256-14-140-115-103.ngrok-free.app/.ssh/id_rsa</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2746,7 +3451,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/.svn/wc.db">https://631c-103-211-15-147.ngrok-free.app/.svn/wc.db</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/.svn/entries">https://c256-14-140-115-103.ngrok-free.app/.svn/entries</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2772,7 +3477,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/1180468937994789374">https://631c-103-211-15-147.ngrok-free.app/1180468937994789374</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/.svn/wc.db">https://c256-14-140-115-103.ngrok-free.app/.svn/wc.db</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2798,7 +3503,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/_framework/blazor.boot.json">https://631c-103-211-15-147.ngrok-free.app/_framework/blazor.boot.json</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/5625041889457945539">https://c256-14-140-115-103.ngrok-free.app/5625041889457945539</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2824,7 +3529,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/_wpeprivate/config.json">https://631c-103-211-15-147.ngrok-free.app/_wpeprivate/config.json</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/_framework/blazor.boot.json">https://c256-14-140-115-103.ngrok-free.app/_framework/blazor.boot.json</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2850,7 +3555,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/adminer.php">https://631c-103-211-15-147.ngrok-free.app/adminer.php</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/_wpeprivate/config.json">https://c256-14-140-115-103.ngrok-free.app/_wpeprivate/config.json</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2876,7 +3581,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/app/etc/local.xml">https://631c-103-211-15-147.ngrok-free.app/app/etc/local.xml</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/adminer.php">https://c256-14-140-115-103.ngrok-free.app/adminer.php</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2902,7 +3607,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/BitKeeper">https://631c-103-211-15-147.ngrok-free.app/BitKeeper</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/app/etc/local.xml">https://c256-14-140-115-103.ngrok-free.app/app/etc/local.xml</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2928,7 +3633,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/CHANGELOG.txt">https://631c-103-211-15-147.ngrok-free.app/CHANGELOG.txt</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/BitKeeper">https://c256-14-140-115-103.ngrok-free.app/BitKeeper</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2954,7 +3659,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms">https://631c-103-211-15-147.ngrok-free.app/cms</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/CHANGELOG.txt">https://c256-14-140-115-103.ngrok-free.app/CHANGELOG.txt</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2980,7 +3685,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms/">https://631c-103-211-15-147.ngrok-free.app/cms/</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms">https://c256-14-140-115-103.ngrok-free.app/cms</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3006,7 +3711,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms/.env">https://631c-103-211-15-147.ngrok-free.app/cms/.env</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/">https://c256-14-140-115-103.ngrok-free.app/cms/</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3032,7 +3737,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms/.htaccess">https://631c-103-211-15-147.ngrok-free.app/cms/.htaccess</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/.env">https://c256-14-140-115-103.ngrok-free.app/cms/.env</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3058,7 +3763,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms/4002984505663531282">https://631c-103-211-15-147.ngrok-free.app/cms/4002984505663531282</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/.htaccess">https://c256-14-140-115-103.ngrok-free.app/cms/.htaccess</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3084,7 +3789,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms/actuator/health">https://631c-103-211-15-147.ngrok-free.app/cms/actuator/health</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/7136037428006698389">https://c256-14-140-115-103.ngrok-free.app/cms/7136037428006698389</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3110,7 +3815,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms/createbooking?class.module.classLoader.DefaultAssertionStatus=nonsense">https://631c-103-211-15-147.ngrok-free.app/cms/createbooking?class.module.classLoader.DefaultAssertionStatus=nonsense</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/actuator/health">https://c256-14-140-115-103.ngrok-free.app/cms/actuator/health</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3136,7 +3841,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms/trace.axd">https://631c-103-211-15-147.ngrok-free.app/cms/trace.axd</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/createbooking?class.module.classLoader.DefaultAssertionStatus=nonsense">https://c256-14-140-115-103.ngrok-free.app/cms/createbooking?class.module.classLoader.DefaultAssertionStatus=nonsense</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3162,7 +3867,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms?class.module.classLoader.DefaultAssertionStatus=nonsense">https://631c-103-211-15-147.ngrok-free.app/cms?class.module.classLoader.DefaultAssertionStatus=nonsense</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/getbooking">https://c256-14-140-115-103.ngrok-free.app/cms/getbooking</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3188,7 +3893,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/composer.json">https://631c-103-211-15-147.ngrok-free.app/composer.json</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/getbooking/">https://c256-14-140-115-103.ngrok-free.app/cms/getbooking/</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3214,7 +3919,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/composer.lock">https://631c-103-211-15-147.ngrok-free.app/composer.lock</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/getbooking/?class.module.classLoader.DefaultAssertionStatus=nonsense">https://c256-14-140-115-103.ngrok-free.app/cms/getbooking/?class.module.classLoader.DefaultAssertionStatus=nonsense</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3240,7 +3945,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/config/database.yml">https://631c-103-211-15-147.ngrok-free.app/config/database.yml</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/getbooking?class.module.classLoader.DefaultAssertionStatus=nonsense">https://c256-14-140-115-103.ngrok-free.app/cms/getbooking?class.module.classLoader.DefaultAssertionStatus=nonsense</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3266,7 +3971,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/config/databases.yml">https://631c-103-211-15-147.ngrok-free.app/config/databases.yml</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/trace.axd">https://c256-14-140-115-103.ngrok-free.app/cms/trace.axd</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3292,7 +3997,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/core">https://631c-103-211-15-147.ngrok-free.app/core</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms?class.module.classLoader.DefaultAssertionStatus=nonsense">https://c256-14-140-115-103.ngrok-free.app/cms?class.module.classLoader.DefaultAssertionStatus=nonsense</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3318,7 +4023,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/CVS/root">https://631c-103-211-15-147.ngrok-free.app/CVS/root</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/composer.json">https://c256-14-140-115-103.ngrok-free.app/composer.json</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3344,7 +4049,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/DEADJOE">https://631c-103-211-15-147.ngrok-free.app/DEADJOE</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/composer.lock">https://c256-14-140-115-103.ngrok-free.app/composer.lock</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3370,7 +4075,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/elmah.axd">https://631c-103-211-15-147.ngrok-free.app/elmah.axd</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/config/database.yml">https://c256-14-140-115-103.ngrok-free.app/config/database.yml</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3396,7 +4101,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/filezilla.xml">https://631c-103-211-15-147.ngrok-free.app/filezilla.xml</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/config/databases.yml">https://c256-14-140-115-103.ngrok-free.app/config/databases.yml</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3422,7 +4127,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/i.php">https://631c-103-211-15-147.ngrok-free.app/i.php</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/core">https://c256-14-140-115-103.ngrok-free.app/core</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3448,7 +4153,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/id_dsa">https://631c-103-211-15-147.ngrok-free.app/id_dsa</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/CVS/root">https://c256-14-140-115-103.ngrok-free.app/CVS/root</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3474,7 +4179,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/id_rsa">https://631c-103-211-15-147.ngrok-free.app/id_rsa</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/DEADJOE">https://c256-14-140-115-103.ngrok-free.app/DEADJOE</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3500,7 +4205,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/info.php">https://631c-103-211-15-147.ngrok-free.app/info.php</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/elmah.axd">https://c256-14-140-115-103.ngrok-free.app/elmah.axd</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3526,7 +4231,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/key.pem">https://631c-103-211-15-147.ngrok-free.app/key.pem</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/filezilla.xml">https://c256-14-140-115-103.ngrok-free.app/filezilla.xml</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3552,7 +4257,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/lfm.php">https://631c-103-211-15-147.ngrok-free.app/lfm.php</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/i.php">https://c256-14-140-115-103.ngrok-free.app/i.php</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3578,7 +4283,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/myserver.key">https://631c-103-211-15-147.ngrok-free.app/myserver.key</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/id_dsa">https://c256-14-140-115-103.ngrok-free.app/id_dsa</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3604,7 +4309,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/phpinfo.php">https://631c-103-211-15-147.ngrok-free.app/phpinfo.php</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/id_rsa">https://c256-14-140-115-103.ngrok-free.app/id_rsa</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3630,7 +4335,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/privatekey.key">https://631c-103-211-15-147.ngrok-free.app/privatekey.key</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/info.php">https://c256-14-140-115-103.ngrok-free.app/info.php</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3656,7 +4361,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/server-info">https://631c-103-211-15-147.ngrok-free.app/server-info</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/key.pem">https://c256-14-140-115-103.ngrok-free.app/key.pem</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3682,7 +4387,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/server-status">https://631c-103-211-15-147.ngrok-free.app/server-status</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/lfm.php">https://c256-14-140-115-103.ngrok-free.app/lfm.php</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3708,7 +4413,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/server.key">https://631c-103-211-15-147.ngrok-free.app/server.key</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/myserver.key">https://c256-14-140-115-103.ngrok-free.app/myserver.key</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3734,7 +4439,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/sftp-config.json">https://631c-103-211-15-147.ngrok-free.app/sftp-config.json</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/phpinfo.php">https://c256-14-140-115-103.ngrok-free.app/phpinfo.php</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3760,7 +4465,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/sitemanager.xml">https://631c-103-211-15-147.ngrok-free.app/sitemanager.xml</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/privatekey.key">https://c256-14-140-115-103.ngrok-free.app/privatekey.key</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3786,7 +4491,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/sites/default/files/.ht.sqlite">https://631c-103-211-15-147.ngrok-free.app/sites/default/files/.ht.sqlite</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/server-info">https://c256-14-140-115-103.ngrok-free.app/server-info</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3812,7 +4517,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/sites/default/private/files/backup_migrate/scheduled/test.txt">https://631c-103-211-15-147.ngrok-free.app/sites/default/private/files/backup_migrate/scheduled/test.txt</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/server-status">https://c256-14-140-115-103.ngrok-free.app/server-status</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3838,7 +4543,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/test.php">https://631c-103-211-15-147.ngrok-free.app/test.php</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/server.key">https://c256-14-140-115-103.ngrok-free.app/server.key</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3864,7 +4569,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/trace.axd">https://631c-103-211-15-147.ngrok-free.app/trace.axd</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/sftp-config.json">https://c256-14-140-115-103.ngrok-free.app/sftp-config.json</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3890,7 +4595,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/vb_test.php">https://631c-103-211-15-147.ngrok-free.app/vb_test.php</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/sitemanager.xml">https://c256-14-140-115-103.ngrok-free.app/sitemanager.xml</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3916,7 +4621,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/vim_settings.xml">https://631c-103-211-15-147.ngrok-free.app/vim_settings.xml</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/sites/default/files/.ht.sqlite">https://c256-14-140-115-103.ngrok-free.app/sites/default/files/.ht.sqlite</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3942,7 +4647,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/winscp.ini">https://631c-103-211-15-147.ngrok-free.app/winscp.ini</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/sites/default/private/files/backup_migrate/scheduled/test.txt">https://c256-14-140-115-103.ngrok-free.app/sites/default/private/files/backup_migrate/scheduled/test.txt</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3968,7 +4673,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/WS_FTP.ini">https://631c-103-211-15-147.ngrok-free.app/WS_FTP.ini</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/test.php">https://c256-14-140-115-103.ngrok-free.app/test.php</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3994,7 +4699,137 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app?aaa=bbb">https://631c-103-211-15-147.ngrok-free.app?aaa=bbb</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/trace.axd">https://c256-14-140-115-103.ngrok-free.app/trace.axd</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">HTTP/1.1 404</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/vb_test.php">https://c256-14-140-115-103.ngrok-free.app/vb_test.php</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">HTTP/1.1 404</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/vim_settings.xml">https://c256-14-140-115-103.ngrok-free.app/vim_settings.xml</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">HTTP/1.1 404</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/winscp.ini">https://c256-14-140-115-103.ngrok-free.app/winscp.ini</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">HTTP/1.1 404</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/WS_FTP.ini">https://c256-14-140-115-103.ngrok-free.app/WS_FTP.ini</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">HTTP/1.1 404</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app?aaa=bbb">https://c256-14-140-115-103.ngrok-free.app?aaa=bbb</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -4020,7 +4855,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app?class.module.classLoader.DefaultAssertionStatus=nonsense">https://631c-103-211-15-147.ngrok-free.app?class.module.classLoader.DefaultAssertionStatus=nonsense</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app?class.module.classLoader.DefaultAssertionStatus=nonsense">https://c256-14-140-115-103.ngrok-free.app?class.module.classLoader.DefaultAssertionStatus=nonsense</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -4046,7 +4881,241 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="http://631c-103-211-15-147.ngrok-free.app/cms/createbooking">http://631c-103-211-15-147.ngrok-free.app/cms/createbooking</a></td>
+						<td width="80%"><a href="http://c256-14-140-115-103.ngrok-free.app/cms/login">http://c256-14-140-115-103.ngrok-free.app/cms/login</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">HTTP/1.1 400</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="http://c256-14-140-115-103.ngrok-free.app/cms/register">http://c256-14-140-115-103.ngrok-free.app/cms/register</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">HTTP/1.1 400</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app">https://c256-14-140-115-103.ngrok-free.app</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">HTTP/1.1 404</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms">https://c256-14-140-115-103.ngrok-free.app/cms</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">HTTP/1.1 404</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/createbooking">https://c256-14-140-115-103.ngrok-free.app/cms/createbooking</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">HTTP/1.1 400</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/getallBooking">https://c256-14-140-115-103.ngrok-free.app/cms/getallBooking</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">HTTP/1.1 404</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/getbooking">https://c256-14-140-115-103.ngrok-free.app/cms/getbooking</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">HTTP/1.1 404</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/getbooking/">https://c256-14-140-115-103.ngrok-free.app/cms/getbooking/</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">HTTP/1.1 404</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/login">https://c256-14-140-115-103.ngrok-free.app/cms/login</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">HTTP/1.1 400</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/login">https://c256-14-140-115-103.ngrok-free.app/cms/login</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -4072,33 +5141,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="http://631c-103-211-15-147.ngrok-free.app/cms/login">http://631c-103-211-15-147.ngrok-free.app/cms/login</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">POST</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">HTTP/1.1 400</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app">https://631c-103-211-15-147.ngrok-free.app</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/login">https://c256-14-140-115-103.ngrok-free.app/cms/login</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -4124,85 +5167,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms">https://631c-103-211-15-147.ngrok-free.app/cms</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">POST</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">HTTP/1.1 404</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms/createbooking">https://631c-103-211-15-147.ngrok-free.app/cms/createbooking</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">POST</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">HTTP/1.1 401</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms/createbooking/">https://631c-103-211-15-147.ngrok-free.app/cms/createbooking/</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">POST</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">HTTP/1.1 401</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms/login">https://631c-103-211-15-147.ngrok-free.app/cms/login</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/login/">https://c256-14-140-115-103.ngrok-free.app/cms/login/</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -4228,33 +5193,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms/login">https://631c-103-211-15-147.ngrok-free.app/cms/login</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">POST</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">HTTP/1.1 404</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms/login/">https://631c-103-211-15-147.ngrok-free.app/cms/login/</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/register">https://c256-14-140-115-103.ngrok-free.app/cms/register</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -4280,7 +5219,33 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/latest/meta-data/">https://631c-103-211-15-147.ngrok-free.app/latest/meta-data/</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/register/">https://c256-14-140-115-103.ngrok-free.app/cms/register/</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">HTTP/1.1 400</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/latest/meta-data/">https://c256-14-140-115-103.ngrok-free.app/latest/meta-data/</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -4305,7 +5270,7 @@ td {
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">72</td>
+					<td width="80%">82</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -4353,7 +5318,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="http://631c-103-211-15-147.ngrok-free.app/cms/login">http://631c-103-211-15-147.ngrok-free.app/cms/login</a></td>
+						<td width="80%"><a href="http://c256-14-140-115-103.ngrok-free.app/cms/login">http://c256-14-140-115-103.ngrok-free.app/cms/login</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -4379,7 +5344,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms/login">https://631c-103-211-15-147.ngrok-free.app/cms/login</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/login">https://c256-14-140-115-103.ngrok-free.app/cms/login</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -4439,6 +5404,270 @@ td {
 			<table class="results">
 				<tr height="24">
 					<th width="20%" class="risk-0"><a
+						id="40040"></a>
+						<div>Informational</div></th>
+					<th class="risk-0">CORS Header</th>
+				</tr>
+				<tr>
+					<td width="20%">Description</td>
+					<td width="80%">
+							<div>Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any other origins (domain, scheme, or port) than its own from which a browser should permit loading of resources. It relaxes the Same-Origin Policy (SOP).</div>
+							
+						</td>
+				</tr>
+				<TR vAlign="top">
+					<TD colspan="2"></TD>
+				</TR>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app">https://c256-14-140-115-103.ngrok-free.app</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%">origin: https://Jqp1vidb.com</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms">https://c256-14-140-115-103.ngrok-free.app/cms</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%">origin: https://Jqp1vidb.com</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/getallBooking">https://c256-14-140-115-103.ngrok-free.app/cms/getallBooking</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%">origin: https://Jqp1vidb.com</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/getbooking">https://c256-14-140-115-103.ngrok-free.app/cms/getbooking</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%">origin: https://Jqp1vidb.com</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/getbooking/">https://c256-14-140-115-103.ngrok-free.app/cms/getbooking/</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%">origin: https://Jqp1vidb.com</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/createbooking">https://c256-14-140-115-103.ngrok-free.app/cms/createbooking</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%">origin: https://Jqp1vidb.com</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/login">https://c256-14-140-115-103.ngrok-free.app/cms/login</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%">origin: https://Jqp1vidb.com</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/register">https://c256-14-140-115-103.ngrok-free.app/cms/register</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%">origin: https://Jqp1vidb.com</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+				
+				<tr>
+					<td width="20%">Instances</td>
+					<td width="80%">8</td>
+				</tr>
+				<tr>
+					<td width="20%">Solution</td>
+					<td width="80%">
+							<div>If a web resource contains sensitive information, the origin should be properly specified in the Access-Control-Allow-Origin header. Only trusted websites needing this resource should be specified in this header, with the most secured protocol supported.</div>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">Reference</td>
+					<td width="80%">
+							<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS</a>
+							<br />
+						
+							<a href="https://portswigger.net/web-security/cors">https://portswigger.net/web-security/cors</a>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">CWE Id</td>
+					<td width="80%"><a
+						href="https://cwe.mitre.org/data/definitions/942.html">942</a></td>
+				</tr>
+				<tr>
+					<td width="20%">WASC Id</td>
+					<td width="80%">14</td>
+				</tr>
+				<tr>
+					<td width="20%">Plugin Id</td>
+					<td width="80%"><a
+						href="https://www.zaproxy.org/docs/alerts/40040/">40040</a></td>
+				</tr>
+			</table>
+			<div class="spacer"></div>
+		
+			<table class="results">
+				<tr height="24">
+					<th width="20%" class="risk-0"><a
 						id="10049"></a>
 						<div>Informational</div></th>
 					<th class="risk-0">Non-Storable Content</th>
@@ -4457,7 +5686,33 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="http://631c-103-211-15-147.ngrok-free.app/cms/createbooking">http://631c-103-211-15-147.ngrok-free.app/cms/createbooking</a></td>
+						<td width="80%"><a href="http://c256-14-140-115-103.ngrok-free.app/cms/getallBooking">http://c256-14-140-115-103.ngrok-free.app/cms/getallBooking</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">307</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="http://c256-14-140-115-103.ngrok-free.app/cms/createbooking">http://c256-14-140-115-103.ngrok-free.app/cms/createbooking</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -4483,7 +5738,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="http://631c-103-211-15-147.ngrok-free.app/cms/login">http://631c-103-211-15-147.ngrok-free.app/cms/login</a></td>
+						<td width="80%"><a href="http://c256-14-140-115-103.ngrok-free.app/cms/login">http://c256-14-140-115-103.ngrok-free.app/cms/login</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -4509,7 +5764,7 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms/createbooking">https://631c-103-211-15-147.ngrok-free.app/cms/createbooking</a></td>
+						<td width="80%"><a href="http://c256-14-140-115-103.ngrok-free.app/cms/register">http://c256-14-140-115-103.ngrok-free.app/cms/register</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -4529,13 +5784,39 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">401</td>
+						<td width="80%">307</td>
 					</tr>
 				
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://631c-103-211-15-147.ngrok-free.app/cms/login">https://631c-103-211-15-147.ngrok-free.app/cms/login</a></td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/login">https://c256-14-140-115-103.ngrok-free.app/cms/login</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">400</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/register">https://c256-14-140-115-103.ngrok-free.app/cms/register</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -4560,7 +5841,7 @@ td {
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">4</td>
+					<td width="80%">6</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -4599,6 +5880,214 @@ td {
 							<br />
 						
 							<div>It must have a status code that is defined as cacheable by default (200, 203, 204, 206, 300, 301, 404, 405, 410, 414, 501).   </div>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">Reference</td>
+					<td width="80%">
+							<a href="https://tools.ietf.org/html/rfc7234">https://tools.ietf.org/html/rfc7234</a>
+							<br />
+						
+							<a href="https://tools.ietf.org/html/rfc7231">https://tools.ietf.org/html/rfc7231</a>
+							<br />
+						
+							<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html (obsoleted by rfc7234)">http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html (obsoleted by rfc7234)</a>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">CWE Id</td>
+					<td width="80%"><a
+						href="https://cwe.mitre.org/data/definitions/524.html">524</a></td>
+				</tr>
+				<tr>
+					<td width="20%">WASC Id</td>
+					<td width="80%">13</td>
+				</tr>
+				<tr>
+					<td width="20%">Plugin Id</td>
+					<td width="80%"><a
+						href="https://www.zaproxy.org/docs/alerts/10049/">10049</a></td>
+				</tr>
+			</table>
+			<div class="spacer"></div>
+		
+			<table class="results">
+				<tr height="24">
+					<th width="20%" class="risk-0"><a
+						id="10015"></a>
+						<div>Informational</div></th>
+					<th class="risk-0">Re-examine Cache-control Directives</th>
+				</tr>
+				<tr>
+					<td width="20%">Description</td>
+					<td width="80%">
+							<div>The cache-control header has not been set properly or is missing, allowing the browser and proxies to cache content. For static assets like css, js, or image files this might be intended, however, the resources should be reviewed to ensure that no sensitive content will be cached.</div>
+							
+						</td>
+				</tr>
+				<TR vAlign="top">
+					<TD colspan="2"></TD>
+				</TR>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/getallBooking">https://c256-14-140-115-103.ngrok-free.app/cms/getallBooking</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">Cache-Control</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/createbooking">https://c256-14-140-115-103.ngrok-free.app/cms/createbooking</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">Cache-Control</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+				
+				<tr>
+					<td width="20%">Instances</td>
+					<td width="80%">2</td>
+				</tr>
+				<tr>
+					<td width="20%">Solution</td>
+					<td width="80%">
+							<div>For secure content, ensure the cache-control HTTP header is set with &quot;no-cache, no-store, must-revalidate&quot;. If an asset should be cached consider setting the directives &quot;public, max-age, immutable&quot;.</div>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">Reference</td>
+					<td width="80%">
+							<a href="https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching">https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</a>
+							<br />
+						
+							<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</a>
+							<br />
+						
+							<a href="https://grayduck.mn/2021/09/13/cache-control-recommendations/">https://grayduck.mn/2021/09/13/cache-control-recommendations/</a>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">CWE Id</td>
+					<td width="80%"><a
+						href="https://cwe.mitre.org/data/definitions/525.html">525</a></td>
+				</tr>
+				<tr>
+					<td width="20%">WASC Id</td>
+					<td width="80%">13</td>
+				</tr>
+				<tr>
+					<td width="20%">Plugin Id</td>
+					<td width="80%"><a
+						href="https://www.zaproxy.org/docs/alerts/10015/">10015</a></td>
+				</tr>
+			</table>
+			<div class="spacer"></div>
+		
+			<table class="results">
+				<tr height="24">
+					<th width="20%" class="risk-0"><a
+						id="10049"></a>
+						<div>Informational</div></th>
+					<th class="risk-0">Storable and Cacheable Content</th>
+				</tr>
+				<tr>
+					<td width="20%">Description</td>
+					<td width="80%">
+							<div>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users.  If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where &quot;shared&quot; caching servers such as &quot;proxy&quot; caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</div>
+							
+						</td>
+				</tr>
+				<TR vAlign="top">
+					<TD colspan="2"></TD>
+				</TR>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://c256-14-140-115-103.ngrok-free.app/cms/getallBooking">https://c256-14-140-115-103.ngrok-free.app/cms/getallBooking</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+				
+				<tr>
+					<td width="20%">Instances</td>
+					<td width="80%">1</td>
+				</tr>
+				<tr>
+					<td width="20%">Solution</td>
+					<td width="80%">
+							<div>Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</div>
+							<br />
+						
+							<div>Cache-Control: no-cache, no-store, must-revalidate, private</div>
+							<br />
+						
+							<div>Pragma: no-cache</div>
+							<br />
+						
+							<div>Expires: 0</div>
+							<br />
+						
+							<div>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request. </div>
 							
 						</td>
 				</tr>

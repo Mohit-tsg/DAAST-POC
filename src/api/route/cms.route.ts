@@ -37,6 +37,16 @@ class CmsRoute {
       this.httpRequestValidator.validate("body",cmsBooking),
       this.cmsController.createbooking,
       );
+
+    this.router.get(
+      "/getallBooking",
+      this.authenticate,
+      this.cmsController.getAllBookings);
+
+    this.router.get(
+      "/getbooking/:booking_id",
+      this.authenticate,
+      this.cmsController.getSingleBooking);
     } 
 }
 

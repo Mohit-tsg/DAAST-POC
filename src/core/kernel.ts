@@ -7,6 +7,7 @@ import i18n from "i18n";
 import * as Sentry from "@sentry/node";
 import { RequestIDMiddleware } from "@middleware/request-id";
 import errorMiddleware from "@middleware/error";
+import loggerMiddleware from "@middleware/logger";
 import SwaggerDocument from "@util/swagger-document";
 import { ENVIRONMENT, SENTRY_DSN } from "@config/secret";
 import constant from "@config/constant";
@@ -31,6 +32,12 @@ export class Kernel {
   public errorMiddleware(app: Application): void {
     app.use(errorMiddleware);
   }
+
+  public loggerMiddleware(app:Application):void{
+    app.use(loggerMiddleware);
+  }
+
+
 
   public databaseConnection(): Promise<void> {
     // establish database connection
@@ -78,7 +85,7 @@ export class Kernel {
   public addCommonMiddleware(app: Application): void {
     app.use(this.requestId.assign);
     const corsOptions = {
-      origin: "*",
+      origin: "https://c256-14-140-115-103.ngrok-free.app",
       methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD", "OPTIONS"],
       allowedHeaders: "*",
       exposedHeaders: "*",

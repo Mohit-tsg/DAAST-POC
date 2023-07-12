@@ -56,6 +56,7 @@ export interface RegisterUser {
 }
 
 export interface CreateBooking{
+  booking_user_id:string
   booking_name :string,
   booking_title:string,
   booking_description:string,

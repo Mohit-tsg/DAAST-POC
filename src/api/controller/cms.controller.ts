@@ -3,7 +3,10 @@ import i18n from "i18n";
 import { ResponseParser } from "@util/response-parser";
 import constant from "@config/constant";
 import { CmsService } from "@service/cms.service";
+import * as jwt from "jsonwebtoken";
+import { JWT_SECRET } from "@config/secret";
 // import { traceDecorator } from "@studiographene/nodejs-telemetry";
+
 
 export class CmsController {
   private responseParser: ResponseParser;
@@ -53,15 +56,24 @@ export class CmsController {
   };
 
   public createbooking = async (req: Request, res: Response): Promise<void> => {
-    // eslint-disable-next-line no-console
-    console.log("🚀 ~ file: cms.controller.ts:56 ~ CmsController ~ createbooking= ~ req:", req)
     const {
       // eslint-disable-next-line camelcase
       body: { booking_name, booking_title ,booking_description },
     } = req;
 
-    // console.log(this.cmsService.createbooking(booking_name, booking_title ,booking_description).get)
-    const response =await this.cmsService.createbooking(booking_name, booking_title ,booking_description);
+    const authToken = req.header("x-auth-token") as string;
+   
+    const decodedToken = await jwt.verify(authToken, JWT_SECRET);
+    
+    req.user = JSON.parse(JSON.stringify(decodedToken));
+    // eslint-disable-next-line no-console
+    console.log("test",req.user);
+
+    // eslint-disable-next-line camelcase
+    const booking_user = req.user.id;
+
+    // eslint-disable-next-line max-len
+    const response =await this.cmsService.createbooking(booking_user,booking_name, booking_title ,booking_description);
     
     this.responseParser
       .setStatus(true)
@@ -70,4 +82,37 @@ export class CmsController {
       .setMessage(i18n.__("SUCCESS"))
       .send(res);
   }
+
+  public getAllBookings = async (
+    req: Request,
+    res: Response,
+  ): Promise<void> => {
+      const response =await this.cmsService.findbooking();
+      this.responseParser
+      .setStatus(true)
+      .setHttpCode(constant.HTTP_STATUS_OK)
+      .setBody(response)
+      .setMessage(i18n.__("SUCCESS"))
+      .send(res);
+  };
+
+  public getSingleBooking = async (
+    req: Request,
+    res: Response,
+  ): Promise<void> => {
+    const {
+      // eslint-disable-next-line camelcase
+      params: { booking_id },
+    } = req;
+    const response = await this.cmsService.findSingleBooking(
+      // eslint-disable-next-line camelcase
+      booking_id.toString(),
+    );
+    this.responseParser
+      .setStatus(true)
+      .setHttpCode(constant.HTTP_STATUS_OK)
+      .setBody(response)
+      .setMessage(i18n.__("email_verified"))
+      .send(res);
+  };
 }

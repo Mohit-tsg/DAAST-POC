@@ -5,7 +5,7 @@
 		"version": "1.0.0",
 		"description": "This is the REST API for Press Wash & Go Application"
 	},
-	"host": "631c-103-211-15-147.ngrok-free.app",
+	"host": "c256-14-140-115-103.ngrok-free.app",
 	"basePath": "",
 	"securityDefinitions": {
 		"bearerAuth": {
@@ -19,6 +19,39 @@
 	"consumes": ["application/json"],
 	"produces": ["application/json"],
 	"paths": {
+		"/cms/register": {
+			"post": {
+			  "tags": [
+				"cms"
+			  ],
+			  "description": "cms login",
+			  "produces": [
+				"application/json"
+			  ],
+			  "parameters": [
+				{
+				  "in": "body",
+				  "name": "cmsLogin",
+				  "description": "cms login object",
+				  "required": true,
+				  "schema": {
+					"$ref": "#/definitions/cmsRegistration"
+				  }
+				}
+			  ],
+			  "responses": {
+				"200": {
+				  "description": "Submitted survey results successfully..."
+				},
+				"400": {
+				  "description": "Bad request"
+				},
+				"500": {
+				  "description": "Server Error"
+				}
+			  }
+			}
+		  },
 		"/cms/login": {
 		  "post": {
 			"tags": [
@@ -84,9 +117,77 @@
 			  }
 			}
 		  }
+		},
+		"/cms/getallBooking":{
+			"get":{
+				"tags": [
+					"cms"
+				  ],
+				  "description": "create booking",
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+				  ],
+				  "responses": {
+					"200": {
+					  "description": "Submitted survey results successfully..."
+					},
+					"400": {
+					  "description": "Bad request"
+					},
+					"500": {
+					  "description": "Server Error"
+					}
+				  }
+			}
+		},
+		"/cms/getbooking/{id}": {
+			"get": {
+			"tags": [
+				"cms"
+			],
+			"description": "get particular booking by id",
+			"produces": [
+				"application/json"
+			],
+			"parameters": [
+				{
+				  "name": "id", 
+				  "in": "path", 
+				  "schema": {
+					"$ref": "#/definitions/bookingSchema"
+				  }
+				}
+			  ],
+			"responses": {
+				"200": {
+				"description": "booking found successfully"
+				},
+				"400": {
+				"description": "Bad request"
+				},
+				"500": {
+				"description": "Server Error"
+				}
+			}
+			}
 		}
+		  
 	  },
 	  "definitions": {
+		"cmsRegistration":{
+			"properties": {
+				"email": {
+				  "type": "string",
+				  "required": true
+				},
+				"password": {
+				  "type": "string",
+				  "required": true
+				}
+			  }
+		},
 		"cmsLogin": {
 		  "properties": {
 			"email": {
@@ -108,8 +209,20 @@
 			"booking_title": {
 			  "type": "string",
 			  "required": false
-			}
+			},
+			"booking_description": {
+				"type": "string",
+				"required": true
+			  }
 		  }
+		},
+		"bookingSchema":{
+			"properties":{
+				"id":{
+					"type":"string",
+					"required":true
+				}
+			}
 		}
 	  }
 }

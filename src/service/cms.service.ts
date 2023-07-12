@@ -60,15 +60,32 @@ export class CmsService {
    */
 
   // eslint-disable-next-line camelcase, max-len
-  public async createbooking(booking_name: string,booking_title:string,booking_description:string): Promise<CreateBooking>{
+  public async createbooking(booking_user:any,booking_name: string,booking_title:string,booking_description:string): Promise<CreateBooking>{
+    // eslint-disable-next-line no-console
+    console.log("🚀 ~ file: cms.service.ts:64 ~ CmsService ~ createbooking ~ booking_user_id:", booking_user)
     
-     // eslint-disable-next-line camelcase
-      const response =  this.bookingRepository.create({booking_name,booking_title,booking_description});
-      return response;
+     // eslint-disable-next-line camelcase, max-len, object-shorthand
+       const response = await this.bookingRepository.save({booking_user,booking_name,booking_title,booking_description});
+
+       // eslint-disable-next-line no-console
+       console.log("🚀 ~ file: cms.service.ts:67 ~ CmsService ~ createbooking ~ response:", response)
       
+    return response;
+  }
 
-     
 
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+  public async findbooking(){
+    // eslint-disable-next-line max-len
+    const response =await this.bookingRepository.find({ select: ["booking_user", "booking_name","booking_title","booking_description"] });
 
+    return response;
+  }
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type, camelcase
+  public async findSingleBooking(booking_id:string) {
+    // eslint-disable-next-line max-len, camelcase
+    const response =await this.bookingRepository.find({where:{id:booking_id}});
+
+    return response;
   }
 }

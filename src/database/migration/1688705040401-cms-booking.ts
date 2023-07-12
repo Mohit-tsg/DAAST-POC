@@ -15,7 +15,7 @@ export class CmsBooking1688705040401 implements MigrationInterface {
                   default: "uuid_generate_v4()",
                 },
                 {
-                  name: "booking_user",
+                  name: "booking_user_id",
                   type: "varchar",
                   isNullable: false,
                 },

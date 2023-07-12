@@ -4,10 +4,11 @@ import {
     PrimaryGeneratedColumn,
     CreateDateColumn,
     UpdateDateColumn,
-    OneToOne,
     JoinColumn,
+    OneToOne,
   } from "typeorm";
 
+  // eslint-disable-next-line import/no-cycle
   import { CmsUser } from "./cms-user.model";
   
   @Entity("cms_booking")
@@ -15,7 +16,7 @@ import {
     @PrimaryGeneratedColumn("uuid")
     public id: string;
   
-    @OneToOne(() => CmsUser) 
+    @OneToOne(() => CmsUser, (cmsuser) => cmsuser.id,{cascade: true})
     @JoinColumn()
     public booking_user: CmsUser;
   
